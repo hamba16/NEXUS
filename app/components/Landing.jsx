@@ -95,6 +95,28 @@ export default function Landing({ onSelectRole }) {
           <p style={{ fontSize: 13, color: '#64748B' }}>Select your access role to continue</p>
         </div>
 
+        <div style={{
+          marginBottom: 20,
+          padding: '10px 12px',
+          borderRadius: 8,
+          background: 'rgba(255,255,255,0.03)',
+          border: '1px solid rgba(255,255,255,0.06)',
+          fontSize: 12,
+          color: '#475569',
+          lineHeight: 1.6,
+          textAlign: 'center',
+        }}>
+          all data used has been audited for realistic verification,{' '}
+          <a
+            href="/data-audit.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: '#64748B', textDecoration: 'underline', textUnderlineOffset: 3, fontWeight: 500 }}
+          >
+            see audit
+          </a>
+        </div>
+
         <h2 style={{
           fontFamily: '"Playfair Display", serif',
           fontSize: 26, fontWeight: 700,

@@ -78,16 +78,17 @@ export default function Sidebar({ role, activeTab, onTabChange, onLogout }) {
       {/* Logo */}
       <div style={{ padding: '24px 20px 20px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
-          <div style={{
-            width: 32, height: 32, borderRadius: 8, flexShrink: 0,
-            background: 'linear-gradient(135deg, #1E40AF, #7C3AED)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-          }}>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2">
-              <polygon points="12,2 22,8.5 22,15.5 12,22 2,15.5 2,8.5" />
-              <circle cx="12" cy="12" r="3" fill="white" stroke="none"/>
-            </svg>
-          </div>
+          <img
+            src="/apex-nexus-logo.png"
+            alt="APEX NEXUS"
+            style={{
+              width: 36,
+              height: 36,
+              borderRadius: 8,
+              flexShrink: 0,
+              objectFit: 'cover',
+            }}
+          />
           <div>
             <div style={{ fontSize: 13, fontWeight: 700, color: '#F1F5F9', letterSpacing: 0.8, fontFamily: '"Playfair Display", serif' }}>APEX NEXUS</div>
             <div style={{ fontSize: 10, color: '#475569', marginTop: 1 }}>Directive Intelligence</div>
@@ -139,6 +140,22 @@ export default function Sidebar({ role, activeTab, onTabChange, onLogout }) {
             <div style={{ fontSize: 12, fontWeight: 600, color: '#E2E8F0' }}>{role.name}</div>
             <div style={{ fontSize: 10, color: '#475569', marginTop: 1 }}>{role.label}</div>
           </div>
+        </div>
+        <div style={{
+          fontSize: 10,
+          color: '#1E293B',
+          marginBottom: 10,
+          lineHeight: 1.5,
+        }}>
+          Seed data.{' '}
+          <a
+            href="/data-audit.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: '#334155', textDecoration: 'underline', textUnderlineOffset: 2 }}
+          >
+            Data audit
+          </a>
         </div>
         <button
           onClick={onLogout}
