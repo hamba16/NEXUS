@@ -1,45 +1,22 @@
 'use client';
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
 import { DIRECTIVES, REGIONS, QUARTERLY_TREND, PILLAR_PERFORMANCE } from '../data/seed';
 import { RadarChart, Radar, PolarGrid, PolarAngleAxis, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, Cell } from 'recharts';
 
 const green = DIRECTIVES.filter(d=>d.rag==='GREEN').length;
 const amber = DIRECTIVES.filter(d=>d.rag==='AMBER').length;
 const red   = DIRECTIVES.filter(d=>d.rag==='RED').length;
-const RAG_DOT_COLOR = { GREEN:'#10B981', AMBER:'#F59E0B', RED:'#EF4444' };
 
-function UgandaMap({ regions, onHover, hovered }) {
-  return (
-    <svg viewBox="0 0 520 540" style={{ width:'100%', height:'100%' }}>
-      {/* Uganda outline — simplified */}
-      <path d="M155,22 L185,14 L235,18 L285,26 L335,38 L375,60 L415,95 L448,140 L462,185 L468,228 L458,270 L445,305 L428,335 L408,358 L382,372 L356,382 L330,388 L302,385 L275,376 L254,368 L232,372 L210,382 L188,376 L164,358 L140,334 L116,305 L96,274 L80,242 L74,210 L78,178 L88,148 L106,120 L124,94 L138,66 Z"
-        fill="#EFF6FF" stroke="#BFDBFE" strokeWidth="2" />
-      {/* Lake Victoria cutout (SE) */}
-      <ellipse cx="360" cy="420" rx="50" ry="42" fill="#DBEAFE" stroke="#93C5FD" strokeWidth="1.5" opacity="0.9"/>
-      <text x="342" y="424" fontSize="8" fill="#64748B" fontFamily="Inter">Lake Victoria</text>
-      {/* Lake Albert (W) */}
-      <ellipse cx="88" cy="200" rx="18" ry="36" fill="#DBEAFE" stroke="#93C5FD" strokeWidth="1" opacity="0.8"/>
-      {/* Region dots */}
-      {regions.map(r => {
-        const c = RAG_DOT_COLOR[r.rag];
-        const isHov = hovered === r.name;
-        return (
-          <g key={r.name} onMouseEnter={()=>onHover(r.name)} onMouseLeave={()=>onHover(null)} style={{cursor:'pointer'}}>
-            <circle cx={r.x} cy={r.y} r={isHov?20:15} fill={c} opacity={0.15} />
-            <circle cx={r.x} cy={r.y} r={isHov?11:8} fill={c} opacity={0.85} stroke="white" strokeWidth="2" />
-            <circle cx={r.x} cy={r.y} r={isHov?16:12} fill="none" stroke={c} strokeWidth="1.2" opacity={0.4} strokeDasharray="3,2"/>
-            <text x={r.x+14} y={r.y+4} fontSize="9" fill="#334155" fontFamily="Inter" fontWeight="600">{r.name.split('/')[0]}</text>
-          </g>
-        );
-      })}
-      {/* Labels */}
-      <text x="200" y="210" fontSize="10" fill="#94A3B8" fontFamily="Inter" transform="rotate(-5,200,210)">CENTRAL</text>
-      <text x="170" y="100" fontSize="9" fill="#94A3B8" fontFamily="Inter">NORTHERN</text>
-      <text x="370" y="200" fontSize="9" fill="#94A3B8" fontFamily="Inter">EASTERN</text>
-      <text x="100" y="330" fontSize="9" fill="#94A3B8" fontFamily="Inter">WESTERN</text>
-    </svg>
-  );
-}
+// Real Leaflet map — loaded client-side only (Leaflet needs `window`).
+const UgandaMap = dynamic(() => import('./UgandaMap'), {
+  ssr: false,
+  loading: () => (
+    <div style={{ width:'100%', height:'100%', display:'flex', alignItems:'center', justifyContent:'center', background:'#EAF2FB', borderRadius:10, color:'#94A3B8', fontSize:12 }}>
+      Loading map…
+    </div>
+  ),
+});
 
 const TT = ({active,payload,label})=>{
   if(!active||!payload?.length) return null;

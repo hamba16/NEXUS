@@ -1,77 +1,46 @@
 'use client';
 import { useState } from 'react';
-import { DIRECTIVES, QUARTERLY_TREND } from '../data/seed';
-
-const green  = DIRECTIVES.filter(d => d.rag === 'GREEN').length;
-const amber  = DIRECTIVES.filter(d => d.rag === 'AMBER').length;
-const red    = DIRECTIVES.filter(d => d.rag === 'RED').length;
-const critical = DIRECTIVES.filter(d => d.rag === 'RED').map(d => d.title).join(', ');
-const ontrack  = DIRECTIVES.filter(d => d.rag === 'GREEN').map(d => d.title).join(', ');
-
-const SYSTEM_PROMPT = `You are the Principal Secretary at Uganda's Directorate for Strategy, Execution Monitoring and Results (DSEMR), Office of the Prime Minister. You write precise, authoritative Presidential Briefings about the implementation status of Uganda's 23 Presidential Directives under the National Development Plan III (NDP III), FY 2025/26.
-
-Your briefings are:
-- Written in formal Ugandan government English
-- Structured with clear sections: Executive Summary, Key Highlights, Areas Requiring Presidential Attention, Recommendations
-- Specific — use real data provided
-- Balanced — acknowledge progress while being frank about failures
-- Approximately 500-700 words
-- Addressed to H.E. the President of Uganda
-- Never use bullet points — only formal paragraphs and numbered recommendations`;
-
-function buildUserPrompt() {
-  return `Generate a classified Presidential Briefing for H.E. President Yoweri Kaguta Museveni for the Cabinet Meeting scheduled 16 June 2026.
-
-DATA — Q4 FY 2025/26:
-- Total Presidential Directives: 23
-- On Track (GREEN): ${green} — ${ontrack}
-- At Risk (AMBER): ${amber}
-- Critical (RED): ${red} — ${critical}
-- National Composite Score: 63.7/100 (up from 61.4 in Q3)
-- Budget Under Monitoring: UGX 14.6 Trillion across all MDAs
-
-HIGHLIGHTS:
-- Tourism revenues exceeded target: USD 2.1B (target USD 1.8B); 1.72M international arrivals
-- Coffee exports reached USD 1.1B — record high
-- Karuma Hydropower (600MW) now fully commercial
-- EACOP pipeline 7% behind schedule due to international litigation
-- National Health Insurance Scheme Bill stalled in Parliament
-- Youth unemployment at 18.2% against 13.5% target
-- Corruption KPIs missed for second consecutive quarter
-- Defence procurement: UGX 168B gap identified between reported and verified spending
-- UWEP fund disbursement at only 34% of allocation
-
-Write the complete Presidential Briefing now.`;
-}
 
 export default function BriefingModal({ onClose, inline = false }) {
   const [briefing, setBriefing] = useState('');
   const [loading, setLoading] = useState(false);
   const [generated, setGenerated] = useState(false);
   const [focus, setFocus] = useState('full');
+  const [copied, setCopied] = useState(false);
 
   const generate = async () => {
     setLoading(true);
     setBriefing('');
     try {
-      const res = await fetch('https://api.anthropic.com/v1/messages', {
+      const res = await fetch('/api/briefing', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          model: 'claude-sonnet-4-6',
-          max_tokens: 1024,
-          system: SYSTEM_PROMPT,
-          messages: [{ role: 'user', content: buildUserPrompt() }],
-        }),
+        body: JSON.stringify({ focus }),
       });
       const data = await res.json();
-      const text = data.content?.find(b => b.type === 'text')?.text || 'Unable to generate briefing. Please try again.';
+      const text = data.briefing || 'Unable to generate briefing. Please try again.';
       setBriefing(text);
       setGenerated(true);
     } catch {
       setBriefing('Connection error. Please check your network and try again.');
     }
     setLoading(false);
+  };
+
+  const downloadBriefing = () => {
+    const blob = new Blob([briefing], { type: 'text/plain' });
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    a.href     = url;
+    a.download = `Presidential_Briefing_${new Date().toISOString().slice(0,10)}.txt`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  const shareBriefing = () => {
+    navigator.clipboard.writeText(briefing);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   const content = (
@@ -166,9 +135,9 @@ export default function BriefingModal({ onClose, inline = false }) {
 
           {generated && !loading && (
             <div style={{ padding: '14px 28px', borderTop: '1px solid #F1F5F9', background: '#FAFBFC', display: 'flex', gap: 8 }}>
-              <button className="btn btn-primary btn-sm">⬇ Download PDF</button>
-              <button className="btn btn-ghost btn-sm">Share Securely</button>
-              <button className="btn btn-ghost btn-sm">Copy Text</button>
+              <button onClick={downloadBriefing} className="btn btn-primary btn-sm">⬇ Download PDF</button>
+              <button onClick={shareBriefing} className="btn btn-ghost btn-sm">{copied ? 'Copied!' : 'Share Securely'}</button>
+              <button onClick={() => navigator.clipboard.writeText(briefing)} className="btn btn-ghost btn-sm">Copy Text</button>
             </div>
           )}
         </div>

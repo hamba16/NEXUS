@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{}";
+self.__REACT_LOADABLE_MANIFEST="{\"app\\\\components\\\\ConvenerView.jsx -> ./UgandaMap\":{\"id\":\"app\\\\components\\\\ConvenerView.jsx -> ./UgandaMap\",\"files\":[\"static/css/_app-pages-browser_app_components_UgandaMap_jsx.css\",\"static/chunks/_app-pages-browser_app_components_UgandaMap_jsx.js\"]}}"

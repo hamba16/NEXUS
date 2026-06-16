@@ -1,7 +1,7 @@
 'use client';
 import { ROLES } from '../data/seed';
 
-const UGANDA_PARLIAMENT_IMG = 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Parliament_of_Uganda.jpg/1440px-Parliament_of_Uganda.jpg';
+const UGANDA_PARLIAMENT_IMG = '/parliament.jpg';
 
 export default function Landing({ onSelectRole }) {
   return (

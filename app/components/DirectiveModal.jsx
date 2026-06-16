@@ -1,4 +1,5 @@
 'use client';
+import DirectiveImage from './DirectiveImage';
 
 const RAGBadge = ({ status }) => {
   const cfg = { GREEN: { cls: 'rag-green', label: 'On Track' }, AMBER: { cls: 'rag-amber', label: 'At Risk' }, RED: { cls: 'rag-red', label: 'Critical' } }[status] || { cls: 'rag-grey', label: 'Pending' };
@@ -14,6 +15,7 @@ export default function DirectiveModal({ directive: d, onClose }) {
   return (
     <div className="modal-overlay" onClick={e => e.target === e.currentTarget && onClose()}>
       <div className="modal-box">
+        <DirectiveImage directive={d} height={190} rounded={false} showLabel={false} />
         {/* Header */}
         <div style={{
           background: d.rag === 'GREEN' ? 'linear-gradient(135deg, #064E3B, #065F46)' : d.rag === 'AMBER' ? 'linear-gradient(135deg, #78350F, #92400E)' : 'linear-gradient(135deg, #7F1D1D, #991B1B)',

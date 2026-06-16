@@ -1,4 +1,3 @@
-'use client';
 
 // ─────────────────────────────────────────────────────────────
 //  APEX NEXUS — Seed Data
@@ -101,7 +100,7 @@ export const DIRECTIVES = [
     narrative: 'Namanve Industrial Park Phase II is 73% complete with 14 new factories operational. BIDCO Uganda expanded its refined cooking oil line. Cement exports to South Sudan reached record levels. UIA recorded 22% increase in FDI pledges in Q3 FY2026.',
     officer: 'Hon. David Bahati', last_report: '2026-06-02',
     region: 'National', trend: [44,51,60,67,71],
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Namanve_Industrial_Park_-_Panorama.jpg/800px-Namanve_Industrial_Park_-_Panorama.jpg',
+    image: '',
   },
   {
     id: 'PD-002', seq: 2,
@@ -120,7 +119,7 @@ export const DIRECTIVES = [
     narrative: 'Operation Wealth Creation distributed inputs to 2.64M households across all 146 districts. NARO released 8 improved crop varieties. Doho and Mubuku irrigation schemes rehabilitated. Coffee export value up 34% to USD 1.1B in FY2025/26.',
     officer: 'Hon. Frank Tumwebaze', last_report: '2026-06-05',
     region: 'National', trend: [38,44,52,58,64],
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Uganda_Coffee.jpg/800px-Uganda_Coffee.jpg',
+    image: '',
   },
   {
     id: 'PD-003', seq: 3,
@@ -139,7 +138,7 @@ export const DIRECTIVES = [
     narrative: 'UNRA paved 340 km of national roads in Q3 FY2026. Kampala–Jinja Expressway Phase 2 land acquisition 88% complete. Standard Gauge Railway Malaba–Kampala detailed design finalised. Entebbe International Airport runway resurfacing completed.',
     officer: 'Eng. Robert Okello', last_report: '2026-06-03',
     region: 'National', trend: [30,38,45,52,58],
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Kampala_Northern_Bypass.jpg/800px-Kampala_Northern_Bypass.jpg',
+    image: '',
   },
   {
     id: 'PD-007', seq: 7,
@@ -158,7 +157,7 @@ export const DIRECTIVES = [
     narrative: 'Uganda surpassed 1.7M tourist arrivals, up 42% from 2024. Bwindi Impenetrable Forest saw record gorilla trekking permits. Source of the Nile Jinja received "Best Safari Town" award by Condé Nast. UTB launched "Explore Uganda" campaign reaching 180 countries.',
     officer: 'Lilly Ajarova', last_report: '2026-06-01',
     region: 'National', trend: [50,58,65,70,76],
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Mountain_gorilla_at_Bwindi.jpg/800px-Mountain_gorilla_at_Bwindi.jpg',
+    image: '',
   },
   {
     id: 'PD-009', seq: 9,
@@ -253,7 +252,7 @@ export const DIRECTIVES = [
     narrative: 'Northern Uganda post-conflict recovery on track. PRDP III projects delivered healthcare centres, schools, and road links in Acholi and Lango sub-regions. Gulu city infrastructure investment reached UGX 420B. UNHCR partnership extended to support 1.5M refugees.',
     officer: 'Dr. Chris Baryomunsi', last_report: '2026-05-29',
     region: 'Northern Uganda', trend: [56,61,66,70,74],
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Gulu_City_panorama.jpg/800px-Gulu_City_panorama.jpg',
+    image: '',
   },
 
   // ── AMBER ──────────────────────────────────────────────
@@ -312,7 +311,7 @@ export const DIRECTIVES = [
     narrative: 'EACOP progress slowed by international NGO litigation at European courts — Tilenga upstream behind schedule. PAU issued 4 new exploration licences in Albertine Graben. UNOC established refinery project steering committee. First oil target revised to late 2027.',
     officer: 'Eng. Ruth Nankabirwa', last_report: '2026-06-07',
     region: 'Western Uganda', trend: [18,24,32,38,44],
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Oil_Platform_Uganda.jpg/800px-Oil_Platform_Uganda.jpg',
+    image: '',
   },
   {
     id: 'PD-008', seq: 8,
@@ -350,7 +349,7 @@ export const DIRECTIVES = [
     narrative: 'NFA planted 68M seedlings against 100M target — corporate tree-planting partnerships contributing 22%. Wetland degradation in Lake Kyoga basin remains a concern. Karuma Hydropower (600MW) fully commercial since Q2 FY2026. Isimba Dam (183MW) contributing to grid stability.',
     officer: 'Barirega Akankwasah', last_report: '2026-05-30',
     region: 'National', trend: [22,29,35,41,46],
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Karuma_Falls_Hydropower_Project_2023.jpg/800px-Karuma_Falls_Hydropower_Project_2023.jpg',
+    image: '',
   },
   {
     id: 'PD-013', seq: 13,
@@ -369,7 +368,7 @@ export const DIRECTIVES = [
     narrative: 'KCCA road rehabilitation programme delivered 96 km of new city roads. Nakawa–Naguru physical development plan approved. Kiira, Jinja, Mbarara cities developing master plans. Water supply to Gulu City expanded covering 76% of households. Drainage improvements in Kampala Central underway.',
     officer: 'Hon. Judith Nabakooba', last_report: '2026-06-06',
     region: 'Urban Areas', trend: [18,24,30,37,41],
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Kampala_Skyline_2024.jpg/800px-Kampala_Skyline_2024.jpg',
+    image: '',
   },
   {
     id: 'PD-015', seq: 15,
@@ -796,16 +795,18 @@ export const MDA_DIRECTIVES = DIRECTIVES.filter(d =>
   ['PD-003', 'PD-006', 'PD-008'].includes(d.id)
 );
 
+// Real geographic coordinates (lat, lng) for each regional hub — used by the
+// Leaflet map in ConvenerView to place RAG-status markers on an actual map.
 export const REGIONS = [
-  { name: 'Kampala / Central', x: 278, y: 316, rag: 'AMBER', directives: 8, population: 3800000 },
-  { name: 'Gulu / Northern', x: 224, y: 98, rag: 'GREEN', directives: 4, population: 2100000 },
-  { name: 'Mbale / Eastern', x: 390, y: 234, rag: 'GREEN', directives: 3, population: 4600000 },
-  { name: 'Mbarara / Western', x: 118, y: 388, rag: 'AMBER', directives: 5, population: 2800000 },
-  { name: 'Arua / West Nile', x: 94, y: 62, rag: 'GREEN', directives: 2, population: 1600000 },
-  { name: 'Moroto / Karamoja', x: 428, y: 130, rag: 'RED', directives: 2, population: 1100000 },
-  { name: 'Jinja / Busoga', x: 344, y: 298, rag: 'GREEN', directives: 3, population: 2900000 },
-  { name: 'Hoima / Albertine', x: 146, y: 220, rag: 'AMBER', directives: 4, population: 1400000 },
-  { name: 'Kabale / Kigezi', x: 96, y: 448, rag: 'GREEN', directives: 2, population: 1200000 },
-  { name: 'Fort Portal / Tooro', x: 74, y: 284, rag: 'GREEN', directives: 3, population: 1800000 },
-  { name: 'Lira / Lango', x: 284, y: 138, rag: 'AMBER', directives: 3, population: 1900000 },
+  { name: 'Kampala / Central', lat: 0.3476, lng: 32.5825, rag: 'AMBER', directives: 8, population: 3800000 },
+  { name: 'Gulu / Northern', lat: 2.7724, lng: 32.2881, rag: 'GREEN', directives: 4, population: 2100000 },
+  { name: 'Mbale / Eastern', lat: 1.0644, lng: 34.1797, rag: 'GREEN', directives: 3, population: 4600000 },
+  { name: 'Mbarara / Western', lat: -0.6072, lng: 30.6545, rag: 'AMBER', directives: 5, population: 2800000 },
+  { name: 'Arua / West Nile', lat: 3.0201, lng: 30.9110, rag: 'GREEN', directives: 2, population: 1600000 },
+  { name: 'Moroto / Karamoja', lat: 2.5277, lng: 34.6660, rag: 'RED', directives: 2, population: 1100000 },
+  { name: 'Jinja / Busoga', lat: 0.4244, lng: 33.2042, rag: 'GREEN', directives: 3, population: 2900000 },
+  { name: 'Hoima / Albertine', lat: 1.4357, lng: 31.3528, rag: 'AMBER', directives: 4, population: 1400000 },
+  { name: 'Kabale / Kigezi', lat: -1.2418, lng: 29.9856, rag: 'GREEN', directives: 2, population: 1200000 },
+  { name: 'Fort Portal / Tooro', lat: 0.6710, lng: 30.2750, rag: 'GREEN', directives: 3, population: 1800000 },
+  { name: 'Lira / Lango', lat: 2.2350, lng: 32.9097, rag: 'AMBER', directives: 3, population: 1900000 },
 ];

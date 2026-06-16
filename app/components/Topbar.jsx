@@ -4,7 +4,8 @@ import { NOTIFICATIONS } from '../data/seed';
 
 export default function Topbar({ role, pageTitle, subtitle }) {
   const [showNotifs, setShowNotifs] = useState(false);
-  const unread = NOTIFICATIONS.filter(n => !n.read).length;
+  const [notifs, setNotifs] = useState(NOTIFICATIONS);
+  const unread = notifs.filter(n => !n.read).length;
 
   const TYPE_COLOR = { RED: '#EF4444', AMBER: '#F59E0B', BLUE: '#3B82F6' };
 
@@ -61,7 +62,7 @@ export default function Topbar({ role, pageTitle, subtitle }) {
                 <span style={{ fontSize: 11, color: '#94A3B8' }}>{unread} unread</span>
               </div>
               <div style={{ maxHeight: 340, overflowY: 'auto' }}>
-                {NOTIFICATIONS.map(n => (
+                {notifs.map(n => (
                   <div key={n.id} style={{
                     padding: '11px 16px', borderBottom: '1px solid #F8FAFC',
                     background: n.read ? 'transparent' : '#FAFBFF',
@@ -80,7 +81,10 @@ export default function Topbar({ role, pageTitle, subtitle }) {
                 ))}
               </div>
               <div style={{ padding: '10px 16px', borderTop: '1px solid #F1F5F9' }}>
-                <button onClick={() => setShowNotifs(false)} style={{ fontSize: 12, color: '#1D4ED8', fontWeight: 600, background: 'none', border: 'none', cursor: 'pointer' }}>
+                <button onClick={() => {
+                  setNotifs(prev => prev.map(n => ({ ...n, read: true })));
+                  setShowNotifs(false);
+                }} style={{ fontSize: 12, color: '#1D4ED8', fontWeight: 600, background: 'none', border: 'none', cursor: 'pointer' }}>
                   Mark all as read
                 </button>
               </div>

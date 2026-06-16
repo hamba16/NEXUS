@@ -64,7 +64,14 @@ const USERS = [
   { name: 'James Saaka',    role: 'MDA Officer', mda: 'NITA-U', last: '3 days ago', status: 'Offline' },
 ];
 
-export default function SecretariatView({ tab }) {
+const QUICK_ACTIONS = [
+  { label: 'View All Directives',   color: '#1E40AF', bg: '#EFF6FF', border: '#BFDBFE', tab: 'directives' },
+  { label: 'Discrepancy Register',  color: '#DC2626', bg: '#FEF2F2', border: '#FECACA', tab: 'discrepancies' },
+  { label: 'Field Reports',         color: '#D97706', bg: '#FFFBEB', border: '#FDE68A', tab: 'field' },
+  { label: 'Export Briefing PDF',   color: '#059669', bg: '#ECFDF5', border: '#A7F3D0', tab: null },
+];
+
+export default function SecretariatView({ tab, onTabChange }) {
   const [selectedDirective, setSelectedDirective] = useState(null);
   const [showBriefing, setShowBriefing] = useState(false);
   const [search, setSearch] = useState('');
@@ -180,19 +187,18 @@ export default function SecretariatView({ tab }) {
               Generate AI Presidential Briefing
             </button>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
-              {[
-                { label: 'View All Directives', color: '#1E40AF', bg: '#EFF6FF', border: '#BFDBFE' },
-                { label: 'Discrepancy Register', color: '#DC2626', bg: '#FEF2F2', border: '#FECACA' },
-                { label: 'Field Reports', color: '#D97706', bg: '#FFFBEB', border: '#FDE68A' },
-                { label: 'Export Briefing PDF', color: '#059669', bg: '#ECFDF5', border: '#A7F3D0' },
-              ].map(a => (
-                <div key={a.label} style={{
+              {QUICK_ACTIONS.map(a => (
+                <button
+                  key={a.label}
+                  onClick={() => a.tab ? onTabChange?.(a.tab) : window.print()}
+                  style={{
                   padding: '10px 12px', borderRadius: 8, background: a.bg,
                   border: `1px solid ${a.border}`, cursor: 'pointer',
                   fontSize: 12, fontWeight: 600, color: a.color,
+                  textAlign: 'left', width: '100%',
                 }}>
                   {a.label}
-                </div>
+                </button>
               ))}
             </div>
           </div>

@@ -72,7 +72,7 @@ export default function Home() {
 
   const renderView = () => {
     switch (role.id) {
-      case 'secretariat': return <SecretariatView tab={tab} />;
+      case 'secretariat': return <SecretariatView tab={tab} onTabChange={setTab} />;
       case 'mda':         return <MDAView         tab={tab} />;
       case 'field':       return <FieldView        tab={tab} />;
       case 'convener':    return <ConvenerView     tab={tab} />;
