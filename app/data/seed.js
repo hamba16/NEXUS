@@ -100,7 +100,7 @@ export const DIRECTIVES = [
     narrative: 'Namanve Industrial Park Phase II is 73% complete with 14 new factories operational. BIDCO Uganda expanded its refined cooking oil line. Cement exports to South Sudan reached record levels. UIA recorded 22% increase in FDI pledges in Q3 FY2026.',
     officer: 'Hon. David Bahati', last_report: '2026-06-02',
     region: 'National', trend: [44,51,60,67,71],
-    image: '',
+    image: 'https://tse3.mm.bing.net/th/id/OIP.3G1B6XHYDB2Zj6lxuLT8hQHaE8?r=0&cb=thfvnextfalcon2&rs=1&pid=ImgDetMain&o=7&rm=3',
   },
   {
     id: 'PD-002', seq: 2,
@@ -119,7 +119,7 @@ export const DIRECTIVES = [
     narrative: 'Operation Wealth Creation distributed inputs to 2.64M households across all 146 districts. NARO released 8 improved crop varieties. Doho and Mubuku irrigation schemes rehabilitated. Coffee export value up 34% to USD 1.1B in FY2025/26.',
     officer: 'Hon. Frank Tumwebaze', last_report: '2026-06-05',
     region: 'National', trend: [38,44,52,58,64],
-    image: '',
+    image: 'https://presidentialinitiatives.go.ug/wp-content/uploads/2024/11/image-31.png',
   },
   {
     id: 'PD-003', seq: 3,
@@ -138,7 +138,7 @@ export const DIRECTIVES = [
     narrative: 'UNRA paved 340 km of national roads in Q3 FY2026. Kampala–Jinja Expressway Phase 2 land acquisition 88% complete. Standard Gauge Railway Malaba–Kampala detailed design finalised. Entebbe International Airport runway resurfacing completed.',
     officer: 'Eng. Robert Okello', last_report: '2026-06-03',
     region: 'National', trend: [30,38,45,52,58],
-    image: '',
+    image: 'https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_800,h_445/https://ugandaupdatenews.com/wp-content/uploads/2022/08/muse.jpg',
   },
   {
     id: 'PD-007', seq: 7,
@@ -157,7 +157,7 @@ export const DIRECTIVES = [
     narrative: 'Uganda surpassed 1.7M tourist arrivals, up 42% from 2024. Bwindi Impenetrable Forest saw record gorilla trekking permits. Source of the Nile Jinja received "Best Safari Town" award by Condé Nast. UTB launched "Explore Uganda" campaign reaching 180 countries.',
     officer: 'Lilly Ajarova', last_report: '2026-06-01',
     region: 'National', trend: [50,58,65,70,76],
-    image: '',
+    image: 'https://nilepost.co.ug/new_cms/wp-content/uploads/2025/11/Group-photo-of-Uganda-delegation-at-official-booth.jpg',
   },
   {
     id: 'PD-009', seq: 9,
@@ -176,7 +176,7 @@ export const DIRECTIVES = [
     narrative: 'Bank of Uganda data shows 73% financial inclusion rate — highest ever. MTN MoMo and Airtel Money combined processed UGX 28T in Q3 FY2026. Emyooga Programme reached 460K beneficiaries. Digital credit products grew 38% among youth demographics.',
     officer: 'Michael Atingi-Ego', last_report: '2026-05-28',
     region: 'National', trend: [48,56,61,65,69],
-    image: '',
+    image: 'https://tse3.mm.bing.net/th/id/OIP.oYnhUPdykF4yJHdKM-nSrgHaE5?r=0&cb=thfvnextfalcon2&rs=1&pid=ImgDetMain&o=7&rm=3',
   },
   {
     id: 'PD-011', seq: 11,
@@ -195,7 +195,7 @@ export const DIRECTIVES = [
     narrative: 'Gold export revenue exceeded USD 310M driven by Artisanal and Small-scale Mining formalisation. Lithium deposits in Karamoja under active geological survey. DGSM completed airborne geophysical survey of 68% of national territory. New cobalt extraction licenses awarded.',
     officer: 'Eng. Ruth Nankabirwa', last_report: '2026-05-30',
     region: 'National', trend: [28,36,43,49,55],
-    image: '',
+    image: 'https://softpower.ug/wp-content/uploads/2025/09/G13hqR3WcAA1Rk1.jpeg',
   },
   {
     id: 'PD-020', seq: 20,
@@ -214,7 +214,7 @@ export const DIRECTIVES = [
     narrative: 'Nakivubo Stadium Phase 2 nearing completion. Uganda Cranes qualified for AFCON 2025. Ugandan athletes claimed 16 medals at international competitions including 2 gold at Commonwealth Games. Marathon runner Joshua Cheptegei broke world record.',
     officer: 'Hon. Hamson Obua', last_report: '2026-06-01',
     region: 'National', trend: [40,46,52,57,62],
-    image: '',
+    image: 'https://nilepost.co.ug/new_cms/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-01-at-11.05.38.jpeg',
   },
   {
     id: 'PD-022', seq: 22,
@@ -233,7 +233,7 @@ export const DIRECTIVES = [
     narrative: 'LGFC completed district fiscal capacity assessments across all 146 districts. Eleven new town councils elevated to municipal status. Sub-county digital record system rolled out in 80 districts. Community score-card exercises completed in 9 regions.',
     officer: 'Rafael Magyezi', last_report: '2026-06-04',
     region: 'National', trend: [35,42,49,55,60],
-    image: '',
+    image: 'https://www.vng-international.nl/app/data/uploads/2024/12/IMG-20221021-WA0000.jpg',
   },
   {
     id: 'PD-023', seq: 23,
@@ -252,7 +252,7 @@ export const DIRECTIVES = [
     narrative: 'Northern Uganda post-conflict recovery on track. PRDP III projects delivered healthcare centres, schools, and road links in Acholi and Lango sub-regions. Gulu city infrastructure investment reached UGX 420B. UNHCR partnership extended to support 1.5M refugees.',
     officer: 'Dr. Chris Baryomunsi', last_report: '2026-05-29',
     region: 'Northern Uganda', trend: [56,61,66,70,74],
-    image: '',
+    image: 'https://wipc.org/wp-content/uploads/2020/05/TJ-Tweetchat-01-1-1400x700.jpg',
   },
 
   // ── AMBER ──────────────────────────────────────────────
@@ -273,7 +273,7 @@ export const DIRECTIVES = [
     narrative: 'Teacher recruitment lagging — only 42% of 18,000 targeted teachers deployed under PPP. Drop-out rates in northern districts elevated at 14%. TVET re-tooling at Uganda Polytechnic Kyambogo progressing. Digital literacy programme reached 220K students.',
     officer: 'Hon. Janet Museveni', last_report: '2026-06-06',
     region: 'National', trend: [28,34,40,44,48],
-    image: '',
+    image: 'https://www.independent.co.ug/wp-content/uploads/2020/06/gulu.jpg',
   },
   {
     id: 'PD-005', seq: 5,
@@ -292,7 +292,7 @@ export const DIRECTIVES = [
     narrative: 'National Health Insurance Scheme Bill stalled in Parliament — major bottleneck. Mulago National Referral Hospital Phase 3 expansion 68% complete. NMS medical supply chain improved; stockout rate down from 34% to 18%. Kiruddu Hospital fully operational.',
     officer: 'Dr. Jane Ruth Aceng', last_report: '2026-06-04',
     region: 'National', trend: [30,36,42,47,52],
-    image: '',
+    image: 'https://awagha.org/public/images/new.jpg',
   },
   {
     id: 'PD-006', seq: 6,
@@ -311,7 +311,7 @@ export const DIRECTIVES = [
     narrative: 'EACOP progress slowed by international NGO litigation at European courts — Tilenga upstream behind schedule. PAU issued 4 new exploration licences in Albertine Graben. UNOC established refinery project steering committee. First oil target revised to late 2027.',
     officer: 'Eng. Ruth Nankabirwa', last_report: '2026-06-07',
     region: 'Western Uganda', trend: [18,24,32,38,44],
-    image: '',
+    image: 'https://ugandainvest.go.ug/wp-content/uploads/2025/09/Tilenga-1-scaled.jpg',
   },
   {
     id: 'PD-008', seq: 8,
@@ -330,7 +330,7 @@ export const DIRECTIVES = [
     narrative: 'National Backbone Infrastructure extended to 14 new districts. URSB IPSAS AI Patent Examination System deployed on NITA-U cloud infrastructure. Government e-payment platform processed UGX 4.2T in Q3. NITA-U GDR Showcase featured 18 breakthrough government ICT systems.',
     officer: 'Eng. James Saaka', last_report: '2026-06-03',
     region: 'National', trend: [28,36,42,48,54],
-    image: '',
+    image: 'https://tse3.mm.bing.net/th/id/OIP.akoIMCkP-q6uaFdseHUepgHaE8?r=0&cb=thfvnextfalcon2&rs=1&pid=ImgDetMain&o=7&rm=3',
   },
   {
     id: 'PD-010', seq: 10,
@@ -349,7 +349,7 @@ export const DIRECTIVES = [
     narrative: 'NFA planted 68M seedlings against 100M target — corporate tree-planting partnerships contributing 22%. Wetland degradation in Lake Kyoga basin remains a concern. Karuma Hydropower (600MW) fully commercial since Q2 FY2026. Isimba Dam (183MW) contributing to grid stability.',
     officer: 'Barirega Akankwasah', last_report: '2026-05-30',
     region: 'National', trend: [22,29,35,41,46],
-    image: '',
+    image: 'https://nilepost.co.ug/wp-content/uploads/2021/04/Namugerwa-right-particpating-in-a-demo-on-climate-change.jpg',
   },
   {
     id: 'PD-013', seq: 13,
@@ -368,7 +368,7 @@ export const DIRECTIVES = [
     narrative: 'KCCA road rehabilitation programme delivered 96 km of new city roads. Nakawa–Naguru physical development plan approved. Kiira, Jinja, Mbarara cities developing master plans. Water supply to Gulu City expanded covering 76% of households. Drainage improvements in Kampala Central underway.',
     officer: 'Hon. Judith Nabakooba', last_report: '2026-06-06',
     region: 'Urban Areas', trend: [18,24,30,37,41],
-    image: '',
+    image: 'https://www.independent.co.ug/wp-content/uploads/2017/12/Ugs-real-estates-2-1.jpg',
   },
   {
     id: 'PD-015', seq: 15,
@@ -387,7 +387,7 @@ export const DIRECTIVES = [
     narrative: 'JLOS Sector Investment Plan FY2025/26 under-funded at 68% release. High Court Commercial Division backlog remains at 7,200 pending cases. E-Court system deployment reached 88 courts. Legal Aid programme supported 40K indigent persons. Plea-bargaining adopted in 34 courts.',
     officer: 'Hon. Norbert Mao', last_report: '2026-05-28',
     region: 'National', trend: [24,31,37,43,49],
-    image: '',
+    image: 'https://justice.go.ug/wp-content/uploads/2022/03/0W2A0970-scaled.jpg',
   },
   {
     id: 'PD-016', seq: 16,
@@ -406,7 +406,7 @@ export const DIRECTIVES = [
     narrative: 'Youth Livelihood Programme loan recovery rate only 42%, limiting new disbursements. UYEP Batch 5 graduated 31K youth in vocational skills. Uganda National Parks created 6,000 tourism sector jobs for youth. Innovation hubs in Kampala, Gulu, and Mbarara supported 1,400 startups.',
     officer: 'Hon. Betty Amongi', last_report: '2026-06-07',
     region: 'National', trend: [20,28,34,40,46],
-    image: '',
+    image: 'https://static.africa-press.net/uganda/sites/34/2025/09/sm_1758077845.773744.jpg',
   },
   {
     id: 'PD-019', seq: 19,
@@ -425,7 +425,7 @@ export const DIRECTIVES = [
     narrative: 'Uganda diaspora remittances reached USD 1.12B, up 18% from FY2025. MFA signed 5 BITs (Kenya, UAE, South Korea, Netherlands, Germany). Diaspora Bond framework drafted but not yet gazetted. Second Diaspora Conference held in Dubai — 800 participants from 48 countries.',
     officer: 'Amb. Jeje Odongo', last_report: '2026-05-27',
     region: 'International', trend: [18,24,30,36,42],
-    image: '',
+    image: 'https://www.independent.co.ug/wp-content/uploads/2024/12/Diaspora-munyonyo-4.jpg',
   },
   {
     id: 'PD-021', seq: 21,
@@ -444,7 +444,7 @@ export const DIRECTIVES = [
     narrative: 'Doing Business reforms progressing — online company registration cut from 9 to 2 days. URA revenue grew 18% to UGX 32.4T. PSFU Private Sector Forum identified 14 key regulatory barriers. UDC operationalised sugar, leather, and furniture value-chain development programs.',
     officer: 'Matia Kasaija', last_report: '2026-06-05',
     region: 'National', trend: [26,34,41,47,53],
-    image: '',
+    image: 'https://ugandabaati.com/wp-content/uploads/2022/09/Pic4.jpeg',
   },
 
   // ── RED ──────────────────────────────────────────────
@@ -465,7 +465,7 @@ export const DIRECTIVES = [
     narrative: 'CRITICAL: Ministry of Defence procurement processes under NDA review — 6 critical tenders suspended pending audit. Police establishment gap of 32,000 officers. Cyber command centre construction halted — contractor dispute. ADF activity in Bundibugyo requires emergency response.',
     officer: 'Hon. Vincent Sempijja', last_report: '2026-05-15',
     region: 'National', trend: [20,24,28,31,34],
-    image: '',
+    image: 'https://newvision-media.s3.amazonaws.com/cms/47739d18-c3ef-49b0-a2b3-c4c6c8005637.jpg',
   },
   {
     id: 'PD-014', seq: 14,
@@ -484,7 +484,7 @@ export const DIRECTIVES = [
     narrative: 'CRITICAL: Corruption remains endemic. IG registered 1,840 new complaints in FY2026. DPP prosecution rate at 34% — down from 58% previous year. Global Financial Integrity estimates USD 680M lost annually to illicit outflows. Presidential anti-corruption taskforce convened in April 2026.',
     officer: 'Irene Mulyagonja', last_report: '2026-05-20',
     region: 'National', trend: [24,26,27,28,29],
-    image: '',
+    image: 'https://thfvnext.bing.com/th/id/R.f386f8198d3de2db0ffd2d0dfd405492?rik=Gj7kuZzrFJdi5g&riu=http%3a%2f%2fwww.igg.go.ug%2fstatic%2fimages%2fgallery%2fAnti-Corruption_Youth_Team_Uganda.jpg&ehk=pA9uo1tCi%2ftnmvwkH4qBZi2atMT103Pagd9V2hpamAY%3d&risl=&pid=ImgRaw&r=0',
   },
   {
     id: 'PD-017', seq: 17,
@@ -503,7 +503,7 @@ export const DIRECTIVES = [
     narrative: 'CRITICAL: Uganda Women Entrepreneurship Programme (UWEP) fund disbursement at only 34% due to MoFPED release constraints. Gender-based violence prosecutions severely under target. Women\'s land rights implementation facing cultural and legal barriers. Emergency parliamentary motion filed.',
     officer: 'Hon. Betty Amongi', last_report: '2026-05-14',
     region: 'National', trend: [20,24,27,29,32],
-    image: '',
+    image: 'https://tse1.mm.bing.net/th/id/OIP.6iNwk2snrv5Vj0pM16nv-wHaEK?r=0&cb=thfvnextfalcon2&rs=1&pid=ImgDetMain&o=7&rm=3',
   },
   {
     id: 'PD-018', seq: 18,
@@ -522,7 +522,7 @@ export const DIRECTIVES = [
     narrative: 'CRITICAL: National Council for Persons with Disabilities severely under-resourced. PWD Fund released at only 27.5% of allocated amount. Parliament\'s Public Accounts Committee flagged chronic underfunding. NCPD Chairman issued urgent escalation letter to OPM in May 2026.',
     officer: 'Eng. David Kato', last_report: '2026-05-10',
     region: 'National', trend: [14,18,21,24,27],
-    image: '',
+    image: 'https://ntv.co.ug/wp-content/uploads/2025/12/Screenshot-2025-12-03-at-10.04.23-PM.png',
   },
 ];
 
