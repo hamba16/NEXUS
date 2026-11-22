@@ -36,8 +36,7 @@ const SECTOR_THEME = {
 const DEFAULT_THEME = { from: '#1E293B', to: '#475569', icon: '📋', photo: 'photo-1454165804606-c3d57bc86b40' };
 
 function buildPhotoUrl(theme, explicit) {
-  if (explicit) return explicit;
-  return `https://images.unsplash.com/${theme.photo}?auto=format&fit=crop&w=1200&q=70`;
+  return explicit?.startsWith('/') && !explicit.startsWith('//') ? explicit : null;
 }
 
 export default function DirectiveImage({ directive, height = 160, rounded = true, showLabel = true }) {
@@ -65,7 +64,7 @@ export default function DirectiveImage({ directive, height = 160, rounded = true
       }} />
 
       {/* Real photo — fades in over the banner once it loads; hidden on error */}
-      {!failed && (
+      {photoUrl && !failed && (
         <img
           src={photoUrl}
           alt={directive?.title || 'Directive'}

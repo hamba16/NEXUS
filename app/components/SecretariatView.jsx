@@ -57,11 +57,11 @@ const USERS = [
   { name: 'Sarah Kakande',  role: 'Secretariat (DSEMR)', mda: 'OPM', last: '5 min ago', status: 'Online' },
   { name: 'Robert Okello',  role: 'MDA Officer', mda: 'MoWT', last: '12 min ago', status: 'Online' },
   { name: 'Grace Atim',     role: 'Field Monitor', mda: 'OPM', last: '2 hrs ago', status: 'Active' },
-  { name: 'Hon. Bahati D.', role: 'MDA Officer', mda: 'MTIC', last: '3 hrs ago', status: 'Active' },
-  { name: 'Dr. Jane Aceng', role: 'MDA Officer', mda: 'MoH', last: '1 day ago', status: 'Away' },
-  { name: 'Joseph Muvawala',role: 'NPA Lead', mda: 'NPA', last: '1 day ago', status: 'Away' },
-  { name: 'Irene Mulyagonja',role: 'IGG/Oversight', mda: 'IGG', last: '2 days ago', status: 'Away' },
-  { name: 'James Saaka',    role: 'MDA Officer', mda: 'NITA-U', last: '3 days ago', status: 'Offline' },
+  { name: 'Moses Kato', role: 'MDA Officer', mda: 'MTIC', last: '3 hrs ago', status: 'Active' },
+  { name: 'Lydia Auma', role: 'MDA Officer', mda: 'MoH', last: '1 day ago', status: 'Away' },
+  { name: 'Daniel Ocen',role: 'NPA Lead', mda: 'NPA', last: '1 day ago', status: 'Away' },
+  { name: 'Esther Namuli',role: 'IGG/Oversight', mda: 'IGG', last: '2 days ago', status: 'Away' },
+  { name: 'Peter Waiswa',    role: 'MDA Officer', mda: 'NITA-U', last: '3 days ago', status: 'Offline' },
 ];
 
 const QUICK_ACTIONS = [

@@ -28,7 +28,7 @@ const FOCUS_DIRECTIVE = {
   economy: 'Focus on economic performance — industrial transformation, agriculture, tourism, trade, financial inclusion, and private-sector development — and their contribution to the national score.',
 };
 
-const SYSTEM_PROMPT = `You are the Principal Secretary at Uganda's Directorate for Strategy, Execution Monitoring and Results (DSEMR), Office of the Prime Minister. You write precise, authoritative Presidential Briefings about the implementation status of Uganda's 23 Presidential Directives under the National Development Plan III (NDP III), FY 2025/26.
+const SYSTEM_PROMPT = `You draft an explicitly SIMULATED exhibition briefing for the Directorate of Socio-Economic Monitoring and Research (DSEMR), Office of the President. All supplied operational figures, findings and legacy directive categories are unverified demo fixtures, not real claims. Do not present them as verified facts or attribute them to real individuals. Start the response with SIMULATED OPERATIONAL DATA — UNAPPROVED EXHIBITION EXAMPLE.
 
 Your briefings are:
 - Written in formal Ugandan government English
@@ -114,14 +114,14 @@ export async function POST(request) {
 
   // No API key → return a deterministic, data-driven briefing.
   if (!process.env.ANTHROPIC_API_KEY) {
-    return Response.json({ briefing: buildTemplateBriefing(focus), source: 'template' });
+    return Response.json({ briefing: 'SIMULATED OPERATIONAL DATA — UNAPPROVED EXHIBITION EXAMPLE\n\n' + buildTemplateBriefing(focus), source: 'template', is_simulated: true });
   }
 
   try {
     const { default: Anthropic } = await import('@anthropic-ai/sdk');
     const client = new Anthropic();
     const response = await client.messages.create({
-      model: 'claude-opus-4-8',
+      model: process.env.ANTHROPIC_MODEL || 'claude-sonnet-5-5',
       max_tokens: 3000,
       thinking: { type: 'adaptive' },
       system: SYSTEM_PROMPT,
@@ -132,13 +132,14 @@ export async function POST(request) {
       .map(b => b.text)
       .join('\n')
       .trim();
-    return Response.json({ briefing: text || buildTemplateBriefing(focus), source: text ? 'claude' : 'template' });
+    return Response.json({ briefing: 'SIMULATED OPERATIONAL DATA — UNAPPROVED EXHIBITION EXAMPLE\n\n' + (text || buildTemplateBriefing(focus)), source: text ? 'claude' : 'template', is_simulated: true });
   } catch (err) {
     // Any API failure falls back to the deterministic briefing so the tool never breaks.
     return Response.json({
-      briefing: buildTemplateBriefing(focus),
+      briefing: 'SIMULATED OPERATIONAL DATA — UNAPPROVED EXHIBITION EXAMPLE\n\n' + buildTemplateBriefing(focus),
+      is_simulated: true,
       source: 'template',
-      note: 'AI service unavailable; generated from live directive data.',
+      note: 'AI service unavailable; generated from unverified exhibition fixtures.',
     });
   }
 }

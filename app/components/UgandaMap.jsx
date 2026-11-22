@@ -35,10 +35,10 @@ export default function UgandaMap({ regions, onHover, hovered }) {
       scrollWheelZoom={false}
       style={{ width: '100%', height: '100%', borderRadius: 10, background: '#EAF2FB' }}
     >
-      <TileLayer
+      {process.env.NEXT_PUBLIC_MAP_TILE_URL && <TileLayer
         attribution='&copy; OpenStreetMap contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
+        url={process.env.NEXT_PUBLIC_MAP_TILE_URL}
+      />}
       {regions.map(r => {
         const color = RAG_COLOR[r.rag] || '#64748B';
         const isHov = hovered === r.name;

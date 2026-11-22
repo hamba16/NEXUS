@@ -28,7 +28,7 @@ export default function BriefingModal({ onClose, inline = false }) {
   };
 
   const downloadBriefing = () => {
-    const blob = new Blob([briefing], { type: 'text/plain' });
+    const blob = new Blob(['SIMULATED OPERATIONAL DATA — UNAPPROVED EXHIBITION EXAMPLE\n\n' + briefing], { type: 'text/plain' });
     const url  = URL.createObjectURL(blob);
     const a    = document.createElement('a');
     a.href     = url;
@@ -135,8 +135,8 @@ export default function BriefingModal({ onClose, inline = false }) {
 
           {generated && !loading && (
             <div style={{ padding: '14px 28px', borderTop: '1px solid #F1F5F9', background: '#FAFBFC', display: 'flex', gap: 8 }}>
-              <button onClick={downloadBriefing} className="btn btn-primary btn-sm">⬇ Download PDF</button>
-              <button onClick={shareBriefing} className="btn btn-ghost btn-sm">{copied ? 'Copied!' : 'Share Securely'}</button>
+              <button onClick={downloadBriefing} className="btn btn-primary btn-sm">Download text</button>
+              <button onClick={shareBriefing} className="btn btn-ghost btn-sm">{copied ? 'Copied!' : 'Copy briefing'}</button>
               <button onClick={() => navigator.clipboard.writeText(briefing)} className="btn btn-ghost btn-sm">Copy Text</button>
             </div>
           )}

@@ -1,7 +1,7 @@
 'use client';
 import { ROLES } from '../data/seed';
 
-const UGANDA_PARLIAMENT_IMG = 'https://upload.wikimedia.org/wikipedia/commons/c/cc/Parliament-Of-Uganda.JPG';
+const UGANDA_PARLIAMENT_IMG = '/apex-nexus-logo.png';
 
 export default function Landing({ onSelectRole }) {
   return (
@@ -14,7 +14,7 @@ export default function Landing({ onSelectRole }) {
       }}>
         <img
           src={UGANDA_PARLIAMENT_IMG}
-          alt="Parliament of Uganda, Kampala"
+          alt="APEX NEXUS exhibition identity"
           style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block' }}
           onError={e => { e.target.style.display = 'none'; }}
         />
@@ -39,7 +39,7 @@ export default function Landing({ onSelectRole }) {
             borderRadius: 6, padding: '4px 12px', marginBottom: 20,
           }}>
             <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#10B981', boxShadow: '0 0 6px #10B981' }} />
-            <span style={{ fontSize: 11, fontWeight: 600, color: 'rgba(255,255,255,0.9)', letterSpacing: 1 }}>LIVE — FY 2025/26 Q4</span>
+            <span style={{ fontSize: 11, fontWeight: 600, color: 'rgba(255,255,255,0.9)', letterSpacing: 1 }}>SIMULATED — LEGACY EXHIBITION</span>
           </div>
           <h1 style={{
             fontFamily: '"Playfair Display", Georgia, serif',
@@ -183,7 +183,7 @@ export default function Landing({ onSelectRole }) {
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#475569" strokeWidth="2">
               <rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" />
             </svg>
-            CLASSIFIED — SECRET / CABINET OFFICE. Access logged. For authorised GOU personnel only.
+            OPEN ACCESS DEMO. No authentication. Do not enter confidential information.
           </div>
         </div>
       </div>

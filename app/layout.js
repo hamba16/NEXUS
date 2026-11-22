@@ -1,5 +1,4 @@
 import './globals.css';
-import { Analytics } from '@vercel/analytics/next';
 
 export const metadata = {
   title: 'APEX NEXUS — Presidential Directive Intelligence',
@@ -13,8 +12,11 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body>
+        <div className="demo-notice" role="note">
+          <strong>Open access exhibition — Simulated operational data.</strong>{' '}
+          Anyone can select a role. Legacy directive numbering and figures are unverified; this is not an official government record.
+        </div>
         {children}
-        <Analytics />
       </body>
     </html>
   );

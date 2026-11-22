@@ -4,13 +4,15 @@
   "description": "APEX NEXUS — Presidential Directive Execution Monitoring System, Uganda",
   "private": true,
   "scripts": {
+    "demo": "node scripts/demo.mjs",
+    "test:e2e": "playwright test",
+    "audit:baseline": "node scripts/baseline.mjs",
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.104.2",
-    "@vercel/analytics": "^2.0.1",
     "clsx": "^2.1.1",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.383.0",

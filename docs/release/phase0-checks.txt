@@ -1,0 +1,9 @@
+Executed locally on Windows, 2026-11-22.
+npm ci --no-audit --no-fund: PASS
+npm run build (baseline and cleanup): PASS, Next 14.2.35, / 233 kB first load
+node scripts/baseline.mjs (original demo): PASS, 27 screenshots, 54 axe rule/screen violations
+lighthouse http://127.0.0.1:3000 (original demo): performance 71, accessibility 94, best practices 73, SEO 100
+npx playwright test (cleanup): 3 passed, 2.9 seconds
+Docker: unavailable on PATH; no Docker executable found in C:/Program Files/Docker
+WSL Ubuntu: starts, Python available, docker and psql unavailable
+Hosted application / remote CI / government integrations: NOT TESTED

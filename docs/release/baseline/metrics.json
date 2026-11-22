@@ -1,0 +1,498 @@
+{
+  "context": "Local production build; automated checks only",
+  "results": [
+    {
+      "screen": "landing",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 22
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "screen": "secretariat-0",
+      "violations": [
+        {
+          "id": "button-name",
+          "impact": "critical",
+          "description": "Ensure buttons have discernible text",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 34
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "screen": "secretariat-1",
+      "violations": [
+        {
+          "id": "button-name",
+          "impact": "critical",
+          "description": "Ensure buttons have discernible text",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 36
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "screen": "secretariat-2",
+      "violations": [
+        {
+          "id": "button-name",
+          "impact": "critical",
+          "description": "Ensure buttons have discernible text",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 14
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "screen": "secretariat-3",
+      "violations": [
+        {
+          "id": "button-name",
+          "impact": "critical",
+          "description": "Ensure buttons have discernible text",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 25
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "screen": "secretariat-4",
+      "violations": [
+        {
+          "id": "button-name",
+          "impact": "critical",
+          "description": "Ensure buttons have discernible text",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 35
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "screen": "secretariat-5",
+      "violations": [
+        {
+          "id": "button-name",
+          "impact": "critical",
+          "description": "Ensure buttons have discernible text",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 29
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "screen": "mda-0",
+      "violations": [
+        {
+          "id": "button-name",
+          "impact": "critical",
+          "description": "Ensure buttons have discernible text",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 30
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "screen": "mda-1",
+      "violations": [
+        {
+          "id": "button-name",
+          "impact": "critical",
+          "description": "Ensure buttons have discernible text",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 19
+        },
+        {
+          "id": "select-name",
+          "impact": "critical",
+          "description": "Ensure select element has an accessible name",
+          "nodes": 3
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "screen": "mda-2",
+      "violations": [
+        {
+          "id": "button-name",
+          "impact": "critical",
+          "description": "Ensure buttons have discernible text",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 24
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "screen": "mda-3",
+      "violations": [
+        {
+          "id": "button-name",
+          "impact": "critical",
+          "description": "Ensure buttons have discernible text",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 58
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "screen": "field-0",
+      "violations": [
+        {
+          "id": "button-name",
+          "impact": "critical",
+          "description": "Ensure buttons have discernible text",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 21
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "screen": "field-1",
+      "violations": [
+        {
+          "id": "button-name",
+          "impact": "critical",
+          "description": "Ensure buttons have discernible text",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 15
+        },
+        {
+          "id": "select-name",
+          "impact": "critical",
+          "description": "Ensure select element has an accessible name",
+          "nodes": 2
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "screen": "field-2",
+      "violations": [
+        {
+          "id": "button-name",
+          "impact": "critical",
+          "description": "Ensure buttons have discernible text",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 31
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "screen": "convener-0",
+      "violations": [
+        {
+          "id": "button-name",
+          "impact": "critical",
+          "description": "Ensure buttons have discernible text",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 13
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "screen": "convener-1",
+      "violations": [
+        {
+          "id": "button-name",
+          "impact": "critical",
+          "description": "Ensure buttons have discernible text",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 13
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "screen": "convener-2",
+      "violations": [
+        {
+          "id": "button-name",
+          "impact": "critical",
+          "description": "Ensure buttons have discernible text",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 15
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "screen": "convener-3",
+      "violations": [
+        {
+          "id": "button-name",
+          "impact": "critical",
+          "description": "Ensure buttons have discernible text",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 23
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "screen": "oversight-0",
+      "violations": [
+        {
+          "id": "button-name",
+          "impact": "critical",
+          "description": "Ensure buttons have discernible text",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 29
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "screen": "oversight-1",
+      "violations": [
+        {
+          "id": "button-name",
+          "impact": "critical",
+          "description": "Ensure buttons have discernible text",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 46
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "screen": "oversight-2",
+      "violations": [
+        {
+          "id": "button-name",
+          "impact": "critical",
+          "description": "Ensure buttons have discernible text",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 21
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "screen": "oversight-3",
+      "violations": [
+        {
+          "id": "button-name",
+          "impact": "critical",
+          "description": "Ensure buttons have discernible text",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 30
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "screen": "anchor-0",
+      "violations": [
+        {
+          "id": "button-name",
+          "impact": "critical",
+          "description": "Ensure buttons have discernible text",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 28
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "screen": "anchor-1",
+      "violations": [
+        {
+          "id": "button-name",
+          "impact": "critical",
+          "description": "Ensure buttons have discernible text",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 29
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "screen": "anchor-2",
+      "violations": [
+        {
+          "id": "button-name",
+          "impact": "critical",
+          "description": "Ensure buttons have discernible text",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 14
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "screen": "anchor-3",
+      "violations": [
+        {
+          "id": "button-name",
+          "impact": "critical",
+          "description": "Ensure buttons have discernible text",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 17
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "screen": "landing-mobile",
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "nodes": 22
+        }
+      ],
+      "overflow": false
+    }
+  ],
+  "externalOrigins": [
+    "https://upload.wikimedia.org",
+    "https://a.tile.openstreetmap.org",
+    "https://c.tile.openstreetmap.org",
+    "https://b.tile.openstreetmap.org"
+  ],
+  "errors": []
+}

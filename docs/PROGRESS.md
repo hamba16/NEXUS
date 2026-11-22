@@ -4,8 +4,8 @@ As of 22 November 2026 (FY2026/27 Q2). This is an implementation ledger, not a r
 
 | Phase | Status | Evidence / remaining gate |
 | --- | --- | --- |
-| 0 Audit and plan | In progress | Source inventory complete; baseline browser and build measurements pending. |
-| 1 Foundations | Pending | Monorepo, strict TypeScript, API, migrations, RLS, Compose and CI. |
+| 0 Audit and plan | Audit implemented; fresh-clone check pending | 27 screenshots, 54 axe rule/screen violations, Lighthouse 71/94/73/100. Production build and 3 browser smoke tests pass after cleanup. |
+| 1 Foundations | In progress | Monorepo, strict TypeScript, API, migrations, RLS, Compose and CI. Docker runtime unavailable locally. |
 | 2 Domain and published seed | Pending | Exactly 23 source-verified directives required; existing demo is not authoritative. |
 | 3 Open profiles | Pending | Actor resolution and SQL/API/UI role tests. |
 | 4 TRACK | Pending | Durable reporting and review workflow. |
@@ -21,6 +21,14 @@ As of 22 November 2026 (FY2026/27 Q2). This is an implementation ledger, not a r
 - Node 24.13.0, npm 11.6.2, Python 3.14.2 and GNU Make are available.
 - Docker is not on PATH; container runtime acceptance remains unverified.
 - Original app has one page, six local-state role views, one Next.js briefing route, no database/service worker/backend.
+
+## Phase 0 evidence
+
+- `docs/release/baseline/`: screenshots of all role tabs, raw Lighthouse and axe data, static scan and inventory.
+- Build before/after cleanup: 233 kB first-load JavaScript. No bundle improvement claimed yet.
+- `npx playwright test`: 3 passed (role navigation, simulated briefing, no default external requests).
+- `npm run demo`: added single-command exhibition bootstrap; isolated clone execution still pending.
+- Research downloaded two NPA reports but has not verified the complete published layer.
 
 ## Resume procedure
 
