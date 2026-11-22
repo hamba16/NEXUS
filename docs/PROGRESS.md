@@ -4,7 +4,7 @@ As of 22 November 2026 (FY2026/27 Q2). This is an implementation ledger, not a r
 
 | Phase | Status | Evidence / remaining gate |
 | --- | --- | --- |
-| 0 Audit and plan | Audit implemented; fresh-clone check pending | 27 screenshots, 54 axe rule/screen violations, Lighthouse 71/94/73/100. Production build and 3 browser smoke tests pass after cleanup. |
+| 0 Audit and plan | Complete | 27 screenshots, 54 axe rule/screen violations, Lighthouse 71/94/73/100. Clean clone `npm run demo` boots; 3 browser smoke tests pass. |
 | 1 Foundations | In progress | Monorepo, strict TypeScript, API, migrations, RLS, Compose and CI. Docker runtime unavailable locally. |
 | 2 Domain and published seed | Pending | Exactly 23 source-verified directives required; existing demo is not authoritative. |
 | 3 Open profiles | Pending | Actor resolution and SQL/API/UI role tests. |
@@ -27,7 +27,7 @@ As of 22 November 2026 (FY2026/27 Q2). This is an implementation ledger, not a r
 - `docs/release/baseline/`: screenshots of all role tabs, raw Lighthouse and axe data, static scan and inventory.
 - Build before/after cleanup: 233 kB first-load JavaScript. No bundle improvement claimed yet.
 - `npx playwright test`: 3 passed (role navigation, simulated briefing, no default external requests).
-- `npm run demo`: added single-command exhibition bootstrap; isolated clone execution still pending.
+- `npm run demo`: executed in isolated local clone of f8ce99f on port 3001; installs, builds and serves; all 3 browser tests pass against clone (5.1 seconds).
 - Research downloaded two NPA reports but has not verified the complete published layer.
 
 ## Resume procedure

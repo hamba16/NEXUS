@@ -22,7 +22,8 @@ test('fallback briefing identifies its simulated provenance', async ({ request }
 
 test('default landing and dashboard make no external requests', async ({ page }) => {
   const origins = new Set();
-  page.on('request', r => { if (/^https?:/.test(r.url()) && !r.url().startsWith('http://127.0.0.1:3000')) origins.add(new URL(r.url()).origin); });
+  const allowedOrigin = new URL(process.env.BASE_URL || 'http://127.0.0.1:3000').origin;
+  page.on('request', r => { if (/^https?:/.test(r.url()) && new URL(r.url()).origin !== allowedOrigin) origins.add(new URL(r.url()).origin); });
   await page.goto('/');
   await page.getByRole('button', { name: /Sarah Kakande/ }).click();
   await expect(page.locator('.sidebar')).toBeVisible();
