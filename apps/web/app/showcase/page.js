@@ -1,14 +1,14 @@
 'use client';
 import { useState } from 'react';
-import Landing      from './components/Landing';
-import Sidebar      from './components/Sidebar';
-import Topbar       from './components/Topbar';
-import SecretariatView from './components/SecretariatView';
-import MDAView      from './components/MDAView';
-import FieldView    from './components/FieldView';
-import ConvenerView from './components/ConvenerView';
-import { OversightView } from './components/OversightView';
-import { NPAView }  from './components/NPAView';
+import Landing      from '../components/Landing';
+import Sidebar      from '../components/Sidebar';
+import Topbar       from '../components/Topbar';
+import SecretariatView from '../components/SecretariatView';
+import MDAView      from '../components/MDAView';
+import FieldView    from '../components/FieldView';
+import ConvenerView from '../components/ConvenerView';
+import { OversightView } from '../components/OversightView';
+import { NPAView }  from '../components/NPAView';
 
 const DEFAULT_TAB = {
   secretariat: 'dashboard',
@@ -66,7 +66,7 @@ export default function Home() {
   const selectRole = (r) => { setRole(r); setTab(DEFAULT_TAB[r.id] || 'dashboard'); };
   const logout     = () => { setRole(null); setTab('dashboard'); };
 
-  if (!role) return <Landing onSelectRole={selectRole} />;
+  if (!role) return <><p className="demo-notice">Historical exhibition: directive numbering and figures are unverified. <a href="/">Return to the persisted workspace</a></p><Landing onSelectRole={selectRole} /></>;
 
   const meta = PAGE_META[role.id]?.[tab] || { title: 'APEX NEXUS', sub: '' };
 

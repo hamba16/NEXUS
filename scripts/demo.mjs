@@ -1,6 +1,7 @@
 import { spawnSync, spawn } from 'node:child_process';
 
-const env = { ...process.env, NEXT_TELEMETRY_DISABLED: '1' };
+// This command explicitly starts a loopback-only open exhibition/web preview.
+const env = { ...process.env, NEXT_TELEMETRY_DISABLED: '1', I_UNDERSTAND_OPEN_MODE: 'true' };
 const windows = process.platform === 'win32';
 function npm(args, options = {}) {
   return spawnSync(windows ? 'npm.cmd' : 'npm', args, { shell: windows, stdio: 'inherit', env, ...options });

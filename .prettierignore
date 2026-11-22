@@ -1,0 +1,9 @@
+node_modules
+.next
+.tools
+.venv
+docs/release/baseline
+seed/research
+package-lock.json
+packages/contracts/openapi.json
+packages/contracts/schema.d.ts

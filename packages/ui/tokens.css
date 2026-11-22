@@ -1,0 +1,12 @@
+:root {
+  --nexus-navy: #0f172a;
+  --nexus-paper: #f9f7f4;
+  --nexus-ink: #1e293b;
+  --nexus-muted: #475569;
+  --nexus-blue: #1e40af;
+  --nexus-border: #cbd5e1;
+  --nexus-success: #166534;
+  --nexus-warning: #854d0e;
+  --nexus-danger: #991b1b;
+  --nexus-radius: 0.75rem;
+}

@@ -1,0 +1,11 @@
+.git
+.tools
+.venv
+**/node_modules
+**/.next
+.env
+.env.*
+docs/release
+seed/research
+**/__pycache__
+test-results

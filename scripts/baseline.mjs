@@ -4,6 +4,7 @@ import { mkdir, writeFile } from 'node:fs/promises';
 
 const output = process.env.AUDIT_OUTPUT || 'docs/release/baseline';
 const base = process.env.BASE_URL || 'http://127.0.0.1:3000';
+const route = process.env.AUDIT_ROUTE || '/showcase';
 await mkdir(output, { recursive: true });
 const browser = await chromium.launch({ headless: true });
 const context = await browser.newContext({ viewport: { width: 1440, height: 1000 } });
@@ -19,10 +20,10 @@ async function capture(name) {
   results.push({ screen: name, violations: axe.violations.map(v => ({ id: v.id, impact: v.impact, description: v.description, nodes: v.nodes.length })), overflow: await page.evaluate(() => document.documentElement.scrollWidth > innerWidth) });
   await writeFile(`${output}/metrics.json`, JSON.stringify({ context: 'Local production build; automated checks only', results, externalOrigins: [...requests], errors }, null, 2));
 }
-await page.goto(base, { waitUntil: 'networkidle' });
+await page.goto(base + route, { waitUntil: 'networkidle' });
 await capture('landing');
 for (const [i,role] of ['secretariat','mda','field','convener','oversight','anchor'].entries()) {
-  await page.goto(base, { waitUntil: 'networkidle' });
+  await page.goto(base + route, { waitUntil: 'networkidle' });
   await page.locator('button').nth(i).click();
   await page.locator('.sidebar').waitFor();
   const tabs = await page.locator('.nav-item').count();
@@ -32,7 +33,7 @@ for (const [i,role] of ['secretariat','mda','field','convener','oversight','anch
     await capture(`${role}-${j}`);
   }
 }
-await page.goto(base, { waitUntil: 'networkidle' });
+await page.goto(base + route, { waitUntil: 'networkidle' });
 await page.setViewportSize({ width: 375, height: 812 });
 await capture('landing-mobile');
 await browser.close();

@@ -1,0 +1,47 @@
+from datetime import datetime
+from typing import Literal
+from uuid import UUID
+
+from pydantic import BaseModel, ConfigDict, Field
+
+from .models import Role
+
+
+class ProfileOut(BaseModel):
+    id: UUID
+    name: str
+    role: Role
+    institution_id: UUID
+    institution_name: str
+    is_simulated: Literal[True] = True
+
+
+class ReportCreate(BaseModel):
+    model_config = ConfigDict(extra='forbid')
+    title: str = Field(min_length=5, max_length=200)
+    period: str = Field(pattern=r'^FY20\d{2}/\d{2} Q[1-4]$')
+    narrative: str = Field(min_length=20, max_length=20000)
+
+
+class ReportOut(ReportCreate):
+    model_config = ConfigDict(from_attributes=True)
+    id: UUID
+    institution_id: UUID
+    actor_id: UUID
+    state: Literal['DRAFT', 'SUBMITTED', 'AI_SUMMARISED', 'UNDER_REVIEW', 'RETURNED', 'ACCEPTED']
+    version: int
+    is_simulated: bool
+    review_comment: str
+    created_at: datetime
+    updated_at: datetime
+
+
+class ReportEdit(ReportCreate):
+    version: int = Field(ge=1)
+
+
+class Transition(BaseModel):
+    model_config = ConfigDict(extra='forbid')
+    version: int = Field(ge=1)
+    action: Literal['submit', 'review', 'accept', 'return']
+    comment: str = Field(default='', max_length=4000)

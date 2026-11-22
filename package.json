@@ -1,33 +1,63 @@
 {
   "name": "apex-nexus",
   "version": "1.0.0",
-  "description": "APEX NEXUS — Presidential Directive Execution Monitoring System, Uganda",
+  "description": "APEX NEXUS â€” Presidential Directive Execution Monitoring System, Uganda",
   "private": true,
   "scripts": {
     "demo": "node scripts/demo.mjs",
     "test:e2e": "playwright test",
     "audit:baseline": "node scripts/baseline.mjs",
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  },
-  "dependencies": {
-    "@anthropic-ai/sdk": "^0.104.2",
-    "clsx": "^2.1.1",
-    "leaflet": "^1.9.4",
-    "lucide-react": "^0.383.0",
-    "next": "^14.2.35",
-    "react": "^18.3.0",
-    "react-dom": "^18.3.0",
-    "react-leaflet": "^4.2.1",
-    "recharts": "^2.12.7"
+    "dev": "npm run dev --workspace @nexus/web",
+    "build": "npm run build --workspace @nexus/web",
+    "start": "npm run start --workspace @nexus/web",
+    "typecheck": "npm run typecheck --workspace @nexus/web",
+    "test:api": "python -m pytest services/api/tests",
+    "contracts": "python scripts/export_openapi.py && openapi-typescript packages/contracts/openapi.json -o packages/contracts/schema.d.ts"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.14.0",
     "@playwright/test": "^1.65.1",
-    "autoprefixer": "^10.4.19",
+    "@size-limit/file": "^14.3.0",
+    "@types/d3-geo": "^3.1.1",
+    "@types/geojson": "^7946.0.16",
+    "@types/node": "^22.20.5",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "@types/three": "^0.170.0",
+    "@types/topojson-client": "^3.1.5",
+    "eslint": "^9.39.5",
     "lighthouse": "^13.6.0",
-    "postcss": "^8.4.38",
-    "tailwindcss": "^3.4.4"
+    "mapshaper": "^0.8.7",
+    "openapi-typescript": "^7.13.0",
+    "prettier": "^3.10.1",
+    "size-limit": "^14.3.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.73.0",
+    "vitest": "^3.2.7",
+    "wcag-contrast": "^3.0.0"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "dependencies": {
+    "@fontsource-variable/fraunces": "^5.3.0",
+    "@fontsource-variable/public-sans": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@radix-ui/react-dialog": "^1.3.1",
+    "@radix-ui/react-dropdown-menu": "^2.2.1",
+    "@radix-ui/react-popover": "^1.3.1",
+    "@radix-ui/react-radio-group": "^1.5.1",
+    "@radix-ui/react-switch": "^1.4.1",
+    "@radix-ui/react-tabs": "^1.2.1",
+    "@radix-ui/react-tooltip": "^1.4.1",
+    "@radix-ui/react-visually-hidden": "^1.2.13",
+    "class-variance-authority": "^0.7.1",
+    "cmdk": "^1.1.1",
+    "d3-geo": "^3.1.2",
+    "framer-motion": "^11.18.2",
+    "sonner": "^1.7.4",
+    "three": "^0.170.0",
+    "topojson-client": "^3.1.0"
   }
 }
