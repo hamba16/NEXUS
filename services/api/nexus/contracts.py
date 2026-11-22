@@ -40,6 +40,15 @@ class ReportEdit(ReportCreate):
     version: int = Field(ge=1)
 
 
+class DirectiveOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    id: UUID
+    number: int = Field(ge=1, le=23)
+    title: str | None = None
+    full_text: str | None = None
+    provenance: Literal['published', 'unverified']
+
+
 class Transition(BaseModel):
     model_config = ConfigDict(extra='forbid')
     version: int = Field(ge=1)

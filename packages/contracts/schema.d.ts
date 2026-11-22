@@ -55,6 +55,23 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/directives": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Directives */
+        get: operations["directives_directives_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/profiles": {
         parameters: {
             query?: never;
@@ -177,6 +194,25 @@ export interface components {
              * Format: uuid
              */
             institution_id: string;
+        };
+        /** DirectiveOut */
+        DirectiveOut: {
+            /**
+             * Id
+             * Format: uuid
+             */
+            id: string;
+            /** Number */
+            number: number;
+            /** Title */
+            title?: string | null;
+            /** Full Text */
+            full_text?: string | null;
+            /**
+             * Provenance
+             * @enum {string}
+             */
+            provenance: "published" | "unverified";
         };
         /** HTTPValidationError */
         HTTPValidationError: {
@@ -373,6 +409,26 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content?: never;
+            };
+        };
+    };
+    directives_directives_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["DirectiveOut"][];
+                };
             };
         };
     };

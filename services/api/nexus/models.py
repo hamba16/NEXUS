@@ -38,6 +38,25 @@ class Profile(Base):
     active: Mapped[bool] = mapped_column(Boolean, default=True)
 
 
+class Directive(Base):
+    __tablename__ = 'directive'
+    id: Mapped[UUID] = mapped_column(primary_key=True, default=uuid4)
+    number: Mapped[int] = mapped_column(Integer)
+    title: Mapped[str | None] = mapped_column(String(300), nullable=True)
+    full_text: Mapped[str | None] = mapped_column(Text, nullable=True)
+    provenance: Mapped[str] = mapped_column(String(16))
+    citations: Mapped[dict] = mapped_column(JSONB, default=dict)
+
+
+class DirectiveScorecard(Base):
+    __tablename__ = 'directive_scorecard'
+    id: Mapped[UUID] = mapped_column(primary_key=True, default=uuid4)
+    directive_id: Mapped[UUID] = mapped_column(ForeignKey('directive.id', ondelete='CASCADE'), index=True)
+    period: Mapped[str] = mapped_column(String(20))
+    label: Mapped[str] = mapped_column(String(20))
+    citation: Mapped[dict] = mapped_column(JSONB)
+
+
 class MDAReport(Base):
     __tablename__ = 'mda_report'
     __table_args__ = (

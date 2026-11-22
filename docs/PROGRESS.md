@@ -5,8 +5,8 @@ As of 22 November 2026 (FY2026/27 Q2). This is an implementation ledger, not a r
 | Phase | Status | Evidence / remaining gate |
 | --- | --- | --- |
 | 0 Audit and plan | Complete | 27 screenshots, 54 axe rule/screen violations, Lighthouse 71/94/73/100. Clean clone `npm run demo` boots; 3 browser smoke tests pass. |
-| 1 Foundations | In progress | Monorepo, strict TypeScript, API, migrations, RLS, Compose and CI. Docker runtime unavailable locally. |
-| 2 Domain and published seed | Pending | Exactly 23 source-verified directives required; existing demo is not authoritative. |
+| 1 Foundations | In progress | Monorepo, strict TypeScript, API, migrations and RLS exist. Compose/CI and Docker acceptance remain incomplete locally. |
+| 2 Domain and published seed | Blocked | Fail-closed verifier and NPA source ledger added. Exactly 23 verbatim directives with citations are not yet reconstructed; legacy demo categories are explicitly excluded. |
 | 3 Open profiles | Pending | Actor resolution and SQL/API/UI role tests. |
 | 4 TRACK | Pending | Durable reporting and review workflow. |
 | 5 VERIFY | Pending | Offline signed evidence, durable outbox and sync tests. |

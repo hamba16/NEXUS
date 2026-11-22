@@ -13,10 +13,10 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from .auth import Actor, actor_session, require_role, resolve_actor
 from .config import get_settings
-from .contracts import ProfileOut, ReportCreate, ReportEdit, ReportOut, Transition
+from .contracts import DirectiveOut, ProfileOut, ReportCreate, ReportEdit, ReportOut, Transition
 from .db import check_database_role, engine, public_session
 from .domain import transition
-from .models import Institution, MDAReport, Profile, Role
+from .models import Directive, Institution, MDAReport, Profile, Role
 
 settings = get_settings()
 logger = logging.getLogger('nexus')
@@ -76,6 +76,12 @@ async def readyz() -> dict:
 @app.get('/metrics', response_class=Response)
 async def metrics() -> Response:
     return Response(f'# TYPE nexus_http_requests_total counter\nnexus_http_requests_total {request_count}\n', media_type='text/plain; version=0.0.4')
+
+
+@app.get('/directives', response_model=list[DirectiveOut])
+async def directives(session: Annotated[AsyncSession, Depends(public_session)]):
+    rows = await session.scalars(select(Directive).order_by(Directive.number))
+    return list(rows)
 
 
 @app.get('/profiles', response_model=list[ProfileOut])

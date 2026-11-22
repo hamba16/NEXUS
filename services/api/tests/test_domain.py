@@ -54,6 +54,13 @@ def test_open_mode_guard():
         Settings(auth_mode='oidc', _env_file=None)
 
 
+def test_directive_verifier_is_fail_closed():
+    import subprocess
+    result = subprocess.run(['python', 'seed/verify_directives.py'], capture_output=True, text=True)
+    assert result.returncode != 0
+    assert 'PUBLISHED DIRECTIVE VERIFICATION FAILED' in result.stdout + result.stderr
+
+
 def test_config_rejects_wildcard_cors_and_sqlite():
     with pytest.raises(ValidationError):
         Settings(cors_origins=['*'], _env_file=None)

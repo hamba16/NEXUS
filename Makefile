@@ -11,6 +11,8 @@ down:
 	$(COMPOSE) down
 seed:
 	$(COMPOSE) run --rm seed
+verify-seed:
+	$(PYTHON) seed/verify_directives.py
 test:
 	$(PYTHON) -m pytest services/api/tests
 e2e:

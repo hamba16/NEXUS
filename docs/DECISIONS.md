@@ -23,3 +23,7 @@ Use a PostgreSQL job queue with locked claims rather than an additional Redis se
 ## ADR-006 — Preserve design, replace simulated behaviours
 
 Keep navy, ivory, serif headings, directive cards and six role workspaces. Replace transient success messages, random GPS, fake media and text masquerading as PDF with durable workflows. Remove unconditional analytics and external runtime assets. Baseline screenshots retain a record of the original demo, not evidence that its claims are true.
+
+## ADR-007 — Fail closed for published directives
+
+The inherited 23 exhibition categories are not promoted to published facts. `seed/verify_directives.py` requires exactly 23 unique directives with verbatim title/text, source citations and status history. The register remains incomplete until source extraction is verified.

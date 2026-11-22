@@ -17,7 +17,7 @@
 
 ---
 
-APEX Nexus is a government-grade executive oversight intelligence platform that digitises Uganda's presidential directive tracking cycle — from MDA quarterly submissions through GPS-verified field evidence to AI-generated presidential briefings. Six institutional roles. Three AI-powered modules. Zero desk-appraisal guesswork.
+APEX Nexus is an in-progress government delivery-monitoring platform for Uganda's presidential directive tracking cycle. The repository includes an open-profile FastAPI/PostgreSQL foundation and a feature-switched Daylight web UI. PWA evidence capture, PDF export, RLS integration tests, and the fully cited published directive register remain incomplete and are not described as operational in this README.
 
 > This repository is a **research and verification visualization** — every module, role, workflow, and data flow presented reflects the real system design, built for institutional review and stakeholder validation.
 
@@ -65,7 +65,7 @@ The `ANTHROPIC_API_KEY` lives server-side only and is never referenced in fronte
 
 ## ✦ Technical Highlights
 
-**Next.js 14 App Router** with full TypeScript powers the frontend — server components handle role-aware rendering, dynamic imports keep bundles lean across six distinct role views, and a PWA layer gives Field Monitors a fully functional offline experience on any smartphone without an app store. The result is a shell that feels instant under government network conditions.
+**Next.js 14 App Router** powers the frontend and the open-profile workspace. A separate Daylight design package is available behind `NEXT_PUBLIC_UI_V2=on`; the default remains off until the migration gates are complete. The result is a shell that feels instant under government network conditions.
 
 ```
 Frontend      Next.js 14 (App Router) · Tailwind CSS · TypeScript · PWA

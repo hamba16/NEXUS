@@ -18,10 +18,10 @@ export default function RootLayout({ children }) {
         <script dangerouslySetInnerHTML={{ __html: comfortBootScript }} />
       </head>
       <body>
-        <div className="demo-notice" role="note">
+        <aside className="demo-notice" role="region" aria-label="Open access data notice">
           <strong>Open access — Simulated operational data.</strong>{' '}
           Anyone can select a profile. No identity assurance. This is not an official government record.
-        </div>
+        </aside>
         {children}
       </body>
     </html>

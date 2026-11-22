@@ -57,6 +57,28 @@
         }
       }
     },
+    "/directives": {
+      "get": {
+        "summary": "Directives",
+        "operationId": "directives_directives_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/DirectiveOut"
+                  },
+                  "type": "array",
+                  "title": "Response Directives Directives Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/profiles": {
       "get": {
         "summary": "Profiles",
@@ -442,6 +464,58 @@
           "institution_id"
         ],
         "title": "Actor"
+      },
+      "DirectiveOut": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id"
+          },
+          "number": {
+            "type": "integer",
+            "maximum": 23.0,
+            "minimum": 1.0,
+            "title": "Number"
+          },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          },
+          "full_text": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Full Text"
+          },
+          "provenance": {
+            "type": "string",
+            "enum": [
+              "published",
+              "unverified"
+            ],
+            "title": "Provenance"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "number",
+          "provenance"
+        ],
+        "title": "DirectiveOut"
       },
       "HTTPValidationError": {
         "properties": {
