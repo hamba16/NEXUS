@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "installCommand": "npm ci",
+  "buildCommand": "npm run build --workspace @nexus/web",
+  "outputDirectory": "apps/web/.next",
+  "env": {
+    "I_UNDERSTAND_OPEN_MODE": "true",
+    "NEXT_PUBLIC_UI_V2": "off"
+  }
+}
