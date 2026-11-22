@@ -15,7 +15,9 @@ export default function config(phase) {
         { key: 'Referrer-Policy', value: 'same-origin' },
         { key: 'X-Frame-Options', value: 'DENY' },
         { key: 'Permissions-Policy', value: 'camera=(self), geolocation=(self), microphone=()' },
-        { key: 'Content-Security-Policy', value: "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'self'" },
+        { key: 'Content-Security-Policy', value: process.env.NODE_ENV === 'development'
+          ? "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'self'"
+          : "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'self'" },
       ] }];
     },
     async rewrites() {
