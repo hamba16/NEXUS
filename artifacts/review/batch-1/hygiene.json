@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-23",
+  "origin": "http://127.0.0.1:3002",
+  "checked": [
+    "docs\\architecture.md",
+    "docs\\cleanup-inventory.md",
+    "docs\\reference-data-loading.md",
+    "docs\\work-ledger.md",
+    "README.md",
+    "/ rendered text and metadata",
+    "/ HTML",
+    "/about rendered text and metadata",
+    "/about HTML",
+    "/privacy rendered text and metadata",
+    "/privacy HTML",
+    "/terms rendered text and metadata",
+    "/terms HTML",
+    "removed /showcase",
+    "removed /data-audit.html",
+    "removed /context",
+    "removed /design",
+    "removed /api/briefing"
+  ],
+  "routes": [
+    "/",
+    "/about",
+    "/privacy",
+    "/terms"
+  ],
+  "failures": [],
+  "passed": true
+}

@@ -14,27 +14,9 @@ class Settings(BaseSettings):
     data_mode: Literal['demo', 'clean'] = 'demo'
     database_url: SecretStr = SecretStr('postgresql+psycopg://nexus_app@127.0.0.1:55432/nexus')
     cors_origins: list[str] = ['http://localhost:3000', 'http://127.0.0.1:3000']
-    ai_mode: Literal['deterministic', 'anthropic', 'auto'] = 'deterministic'
-    anthropic_model: str = 'claude-sonnet-5-5'
-    anthropic_api_key: SecretStr | None = None
-    minio_endpoint: str = 'http://127.0.0.1:9000'
-    minio_access_key: SecretStr = SecretStr('nexus-local-only')
-    minio_secret_key: SecretStr = SecretStr('nexus-local-only-change-me')
-    minio_bucket: str = 'nexus-evidence'
     request_limit_per_minute: int = Field(default=120, ge=1, le=10000)
     migration_database_url: SecretStr | None = None
     database_url_unpooled: SecretStr | None = None
-    neon_branch: str | None = None
-    neon_branch_id: str | None = None
-    neon_function_host_suffix: str | None = None
-    aws_access_key_id: SecretStr | None = None
-    aws_secret_access_key: SecretStr | None = None
-    aws_endpoint_url_s3: str | None = None
-    aws_region: str | None = None
-    neon_ai_gateway_token: SecretStr | None = None
-    neon_ai_gateway_base_url: str | None = None
-    neon_realtime_url: str | None = None
-    neon_realtime_secret: SecretStr | None = None
 
     @model_validator(mode='after')
     def validate_runtime(self) -> 'Settings':

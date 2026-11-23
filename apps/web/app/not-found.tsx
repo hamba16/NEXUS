@@ -1,0 +1,1 @@
+export default function NotFound() { return <main id="main" className="document"><h1>Page not found</h1><p>The address may have changed. Return to the home page to continue.</p><a className="button" href="/">Return home</a></main>; }

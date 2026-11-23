@@ -1,18 +1,9 @@
 # Architecture
 
-## Runtime
+The web application is Next.js in `apps/web`. The HTTP API is FastAPI in `services/api`. Alembic manages PostgreSQL schema changes. Runtime database access uses `nexus_app`, which must not own application tables or have bypass privileges. Request permissions are enforced on the server and through transaction-scoped row-level policies.
 
-- `apps/web`: Next.js 14 App Router, feature-switched Daylight UI and open-profile workspace.
-- `services/api`: FastAPI, async SQLAlchemy, Pydantic contracts, PostgreSQL RLS.
-- `packages/contracts`: generated OpenAPI and TypeScript schema artifacts.
-- `packages/design`: Daylight Atlas design package.
-- `seed`: provenance-first published seed plus synthetic operational fixtures.
-- `infra`: Docker Compose foundation with PostgreSQL and MinIO.
+Operational routes are closed during the account transition. `/healthz` returns only service availability. No public diagnostic endpoint invokes remote services. Data loading is an operator command, separate from the request process.
 
-## Authorization
+External government, identity and AI integrations are outside the product scope. A future project may assess such connections under separate authorisation, architecture and data-protection review; this build contains no provider implementation for them.
 
-An actor is resolved from `X-Actor-Id` in open mode, then transaction-scoped settings are applied before database work. RLS is forced on operational tables. No authentication claim is treated as identity.
-
-## Data classes
-
-Published reference data requires citations. Simulated operational records require `is_simulated=true`. The directive verifier fails closed until exactly 23 fully cited directives are available.
+The web host and PostgreSQL service remain deployment infrastructure. Their locations and access controls must be recorded by the operator before processing personal information.

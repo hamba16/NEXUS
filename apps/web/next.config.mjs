@@ -1,10 +1,6 @@
-import { PHASE_PRODUCTION_SERVER } from 'next/constants.js';
 import { fileURLToPath } from 'node:url';
 
-export default function config(phase) {
-  if (phase === PHASE_PRODUCTION_SERVER && process.env.I_UNDERSTAND_OPEN_MODE !== 'true') {
-    throw new Error('Open access: set I_UNDERSTAND_OPEN_MODE=true before starting a production build.');
-  }
+export default function config() {
   return {
     output: 'standalone',
     transpilePackages: ['@nexus/design'],

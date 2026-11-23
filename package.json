@@ -1,12 +1,11 @@
 {
   "name": "apex-nexus",
   "version": "1.0.0",
-  "description": "APEX NEXUS â€” Presidential Directive Execution Monitoring System, Uganda",
+  "description": "APEX NEXUS - Executive Oversight Platform",
   "private": true,
   "scripts": {
-    "demo": "node scripts/demo.mjs",
     "test:e2e": "playwright test",
-    "audit:baseline": "node scripts/baseline.mjs",
+    "hygiene": "node scripts/ui-hygiene.mjs",
     "dev": "npm run dev --workspace @nexus/web",
     "build": "npm run build --workspace @nexus/web",
     "start": "npm run start --workspace @nexus/web",
@@ -44,8 +43,6 @@
     "@fontsource-variable/fraunces": "^5.3.0",
     "@fontsource-variable/public-sans": "^5.3.0",
     "@fontsource/ibm-plex-mono": "^5.3.0",
-    "@neon/config": "^1.14.6",
-    "@neon/env": "^2.1.9",
     "@radix-ui/react-dialog": "^1.3.1",
     "@radix-ui/react-dropdown-menu": "^2.2.1",
     "@radix-ui/react-popover": "^1.3.1",
@@ -56,10 +53,7 @@
     "@radix-ui/react-visually-hidden": "^1.2.13",
     "class-variance-authority": "^0.7.1",
     "cmdk": "^1.1.1",
-    "d3-geo": "^3.1.2",
     "framer-motion": "^11.18.2",
-    "sonner": "^1.7.4",
-    "three": "^0.170.0",
-    "topojson-client": "^3.1.0"
+    "sonner": "^1.7.4"
   }
 }

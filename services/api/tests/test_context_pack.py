@@ -1,5 +1,5 @@
 import pytest
-from seed.import_context_pack import slugify
+from seed.load_reference_data import slugify
 
 
 def test_context_slug_is_stable():
