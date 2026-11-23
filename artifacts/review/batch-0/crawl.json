@@ -1,0 +1,100 @@
+{
+  "date": "2026-11-23",
+  "origin": "https://nexus-one-self.vercel.app",
+  "results": [
+    {
+      "path": "/",
+      "status": 200,
+      "title": "APEX NEXUS — Presidential Directive Intelligence",
+      "text": "Open access — Simulated operational data. Anyone can select a profile. No identity assurance. This is not an official government record.\nSkip to workspace\nAPEX NEXUS\nExecutive Oversight Intelligence\nUganda context register\nExhibition reference\n\nOffice of the President · Product development workspace\n\nAccountability begins with a clear record.\n\nChoose a synthetic profile to exercise persisted reporting and review. Published directive research and the remaining production modules are still in progress.\n\nThe API is unavailable. Start the foundation services, then retry. Request failed (404). Check your entries and retry.Retry connection\nDevelopment foundation · Synthetic institutions and personas · Open profile selection provides no identity assurance.",
+      "links": [
+        "#workspace-main",
+        "/",
+        "/context",
+        "/showcase"
+      ],
+      "errors": [],
+      "failures": [
+        {
+          "path": "/backend/profiles",
+          "status": 404
+        }
+      ]
+    },
+    {
+      "path": "/showcase",
+      "status": 200,
+      "title": "APEX NEXUS — Presidential Directive Intelligence",
+      "text": "Open access — Simulated operational data. Anyone can select a profile. No identity assurance. This is not an official government record.\n\nHistorical exhibition: directive numbering and figures are unverified. Return to the persisted workspace\n\nSIMULATED — LEGACY EXHIBITION\nPresidential\nDirective\nIntelligence\n\nExecutive Oversight & Monitoring Platform for Uganda's 23 Presidential Directives under NDP III\n\n23\nActive Directives\n63.7\nNational Score\n146\nDistricts Covered\nAPEX NEXUS\n\nSelect your access role to continue\n\nall data used has been audited for realistic verification, see audit\nWho are you today?\n\nEach role provides a tailored view of Uganda's directive execution landscape.\n\nSK\nSarah Kakande\nDSEMR, Office of the President\nPrincipal Secretary\nFull directive oversight, AI briefing, user management\nRO\nRobert Okello\nMoWT\nDirector — Transport\nSubmit directive progress reports, view assigned KPIs\nGA\nGrace Atim\nDSEMR — Field Verification\nSenior Field Monitor\nField verification, evidence capture, site validation\nEO\nExecutive Oversight\nState House, Nakasero\nState House — Executive\nPresidential-level executive summary and national map\nIM\nEsther Namuli\nIGG — Uganda\nInspector General\nDiscrepancy detection, audit flagging, variance analysis\nJM\nDaniel Ocen\nNPA — NDP III Monitoring\nDeputy Director General\nNDP III pillar alignment, cross-sector performance\nOPEN ACCESS DEMO. No authentication. Do not enter confidential information.",
+      "links": [
+        "/",
+        "/data-audit.html"
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "path": "/context",
+      "status": 200,
+      "title": "APEX NEXUS — Presidential Directive Intelligence",
+      "text": "Open access — Simulated operational data. Anyone can select a profile. No identity assurance. This is not an official government record.\n\nPUBLIC-RECORD CONTEXT\n\nUganda context register\n\nSources, office holders, reported directives and indicators as of 23 November 2026. The 23 official directive texts remain unverified.\n\nCould not load reported_directives\n\nImport a context pack\n\nChoose the complete Uganda context JSON. It will be stored as public-record or reported data only.\n\nreported directives\nministers\nsenior officials\ndirective themes\npublic indicators\nlegal instruments\nappointment events\noversight architecture\nsources\nunverified roles\nunresolved legal instruments",
+      "links": [],
+      "errors": [],
+      "failures": [
+        {
+          "path": "/backend/context",
+          "status": 404
+        },
+        {
+          "path": "/backend/context/reported_directives",
+          "status": 404
+        }
+      ]
+    },
+    {
+      "path": "/data-audit.html",
+      "status": 200,
+      "title": "Seed Data Audit — APEX NEXUS",
+      "text": "Historical exhibition audit. Figures and directive numbering remain unverified. Simulated operational data; not an official government record.\nAPEX NEXUS\nDATA AUDIT\nBack to platform\nFY 2025/26 — SEED DATA INTEGRITY REVIEW\nHow real is the\nAPEX NEXUS data?\n\nEvery KPI, narrative, and institutional figure in this platform was cross-referenced against live Ugandan government statistics, World Bank data, UBOS surveys, and sector-specific sources. Here is the full picture.\n\nOVERALL REALISM\n74%\nacross 28 metrics\nACCURATE\n14\nwithin ±5% of official data\nPLAUSIBLE\n9\ndirectionally correct\nNEEDS UPDATE\n5\noutdated source data\nRealism distribution across all verified metrics\n74%\nAccurate (50%)\nClose / plausible (32%)\nNeeds update (18%)\nREALISM SCORE BY SECTOR\nYouth employment\n92%\nCorruption / governance\n90%\nFinancial inclusion\n85%\nAgriculture\n72%\nTax & private sector\n70%\nTourism\n68%\nHealth\n65%\nOil & Gas (EACOP)\n28%\nAgriculture & Exports\nPD-002 · MAAIF / NAADS / OWC\nMETRIC\tSEED VALUE\tREAL (2025/26)\tSOURCE\tVERDICT\n\nCoffee export revenue\nPD-002 narrative\n\tUSD 1.1B\tUSD 2.4B (Nov 24–Oct 25)\tUganda Coffee Development Authority / Ministry of Agriculture monthly report\tUnderstated 2×\nSeed reflects FY23/24 peak. Uganda became Africa's top exporter in 2025 with a 77% value surge\n\n\nOWC household reach\nPD-002 KPI\n\t2.64M of 2.8M target\t2.5–3M range\tOWC operational reports; all 146 districts active\tPlausible\nNo public figure contradicts this range\n\n\nAgriculture GDP growth\nPD-002 KPI\n\t5.8% actual\t~4–5% (World Bank 2025)\tWorld Bank Uganda GDP tracker; overall growth 6.1% in 2025\tSlightly optimistic\nAgriculture typically lags headline GDP; 5.8% is achievable but bullish\nTourism\nPD-007 · UTB / UWA\nMETRIC\tSEED VALUE\tREAL (2025/26)\tSOURCE\tVERDICT\n\nInternational arrivals\nPD-007 KPI\n\t1.72M\t1.64M (2025)\tMinistry of Tourism Statistical Abstract 2025\tAccurate\n~5% variance — well within demo tolerance\n\n\nTourism revenue\nPD-007 KPI\n\tUSD 2.1B\tUSD 1.62B (UGX 5.8T)\tMinistry of Tourism / UBOS Tourism Satellite Account\tOverstated ~30%\n$2.1B is a plausible FY2026/27 projection but not current\n\n\nGorilla permits issued\nPD-007 KPI\n\t19,400\t~15K–20K (UWA)\tUganda Wildlife Authority annual permit data\tAccurate\nBwindi + Mgahinga combined capacity consistent; Rushaga expansion plausible\nFinancial Inclusion\nPD-009 · Bank of Uganda / UMRA\nMETRIC\tSEED VALUE\tREAL (2025/26)\tSOURCE\tVERDICT\n\nAdults with bank/mobile account\nPD-009 KPI\n\t73%\t64–73% (BoU / Finscope)\tBank of Uganda Q1 2025 quarterly review; 33.7M active accounts\tAccurate\nSeed aligns with BoU's headline metric; Finscope 2023 puts usage at 64% — methodology differs\n\n\nMobile money transactions\nPD-009 KPI\n\t204M/quarter\tHigh hundreds of millions\tBoU quarterly financial stability reports; 20.9% volume growth YoY\tConservative\nAt 33.7M accounts, 204M quarterly transactions (6 txns/user/quarter) is actually low\nOil & Gas — EACOP / Tilenga\nPD-006 · MEMD / UNOC / TotalEnergies\nMETRIC\tSEED VALUE\tREAL (APR 2026)\tSOURCE\tVERDICT\n\nEACOP pipeline completion\nPD-006 KPI — primary\n\t38%\t82%\tEACOP Company official project update, April 2026. Marine jetty at 88.1%\tCritical error — 44pp gap\nBiggest factual discrepancy in the dataset. Seed appears to reference mid-2024 figures\n\n\nFirst oil target\nPD-006 narrative\n\tLate 2027\tOctober 2026\tEACOP Company / Wikipedia revised commissioning date\t~1 year behind\nProject advancing rapidly; October 2026 is the current target\n\n\nNGO litigation impact\nPD-006 narrative framing\n\tLitigation slowing progress\tLitigation exists; construction unaffected\tTotalEnergies project statements; French / EU court proceedings ongoing\tPartially accurate\nLitigation is real but has not stopped construction — the framing overstates delay\nCorruption & Governance\nPD-014 · IGG / DPP / FIA\nMETRIC\tSEED VALUE\tREAL (2025)\tSOURCE\tVERDICT\n\nCPI score\nPD-014 KPI\n\t26/100 (actual)\t25/100 (2025)\tTransparency International CPI 2025. Ranked 148/182 countries\tAccurate\nOne point variance — seed used 2024 score. Both reflect the same sustained stagnation\n\n\nCorruption trend\nPD-014 completion 29%\n\tStagnant, near-flat\t27→26→26→25 (2021–2025)\tTI historical dataset; four-year plateau\tHighly accurate\nRED status and 29% completion are entirely justified by the data\nYouth Employment\nPD-016 · MGLSD / YLP / UYEP\nMETRIC\tSEED VALUE\tREAL (UBOS 2026)\tSOURCE\tVERDICT\n\nYouth unemployment rate\nPD-016 KPI\n\t18.2%\t17.9%\tUBOS Labour Market Survey 2025, disseminated April 2026\tPrecise\n0.3pp variance. Note: World Bank uses narrower ILO definition (~4.5%) — seed correctly uses UBOS broader measure\n\n\nYLP loan recovery rate\nDX-006 discrepancy\n\t42% reported / 28% actual\tRecovery widely cited as poor (~30–40%)\tParliamentary debates; IG investigation reports; media coverage\tAccurate\nThe discrepancy scenario mirrors documented IG-type findings on YLP\nHealth\nPD-005 · MoH / NMS / UVRI\nMETRIC\tSEED VALUE\tREAL (WHO/MOH 2024)\tSOURCE\tVERDICT\n\nMaternal mortality ratio\nPD-005 KPI\n\t264/100K LB\t170–189/100K LB\tWHO 2022 estimate: 189. World Bank 2023 model: 170\t~40% overstated\nSeed uses 2019-era data (~284). Current WHO figure is 189; World Bank 2023 model gives 170\n\n\nDPT3 vaccine coverage\nPD-005 KPI\n\t88%\t87–91%\tUNICEF immunization data; MoH annual health sector performance report\tAccurate\nConsistently in this range across multiple sources\n\n\nNMS stockout field finding\nDX-005 / FR-2026-112\n\t56% of HCs with stockouts\tStockouts a documented ongoing issue\tMoH sector reports; northern region findings consistent with field data\tPlausible\nNorthern region stockouts are well-documented; 56% is on the high end but defensible\nTax & Private Sector\nPD-021 · MoFPED / URA / PSFU\nMETRIC\tSEED VALUE\tREAL (URA / WORLD BANK)\tSOURCE\tVERDICT\n\nTax revenue to GDP\nPD-021 KPI\n\t15.1% actual\t13.4–14.5%\tWorld Bank 2023: 13%; IMF FY2025 projection: 14.5%; Monitor Apr 2026: 13–14%\tOverstated ~1.5pp\nGovernment's own 2030 target is 18%. 15.1% is aspirational, not current reality\n\n\nURA domestic revenue\nPD-021 narrative\n\tUGX 32.4T\t~UGX 32T (FY2024/25)\tMonitor confirmed domestic revenues reached ~UGX 32T in FY2024/25\tPrecise\nSpot-on. 46% growth over 4 years confirmed\nKey findings\n✓\nYouth & corruption data is publication-grade\nYouth unemployment (18.2% vs UBOS 17.9%), CPI score (26 vs TI's 25), and URA revenue figure (UGX 32.4T) are all within rounding distance of official published data.\n✓\nInstitutional framing is well-grounded\nYLP loan recovery problems, northern region HC stockouts, NMS supply chain failures, and IG discrepancy patterns all reflect documented real institutional challenges.\n!\nCoffee & tourism figures need updating\nCoffee export revenue (seed $1.1B vs actual $2.4B) reflects FY23/24 data. Tourism revenue ($2.1B vs $1.62B) is a future projection presented as current. Both undermine PD-002 and PD-007.\n!\nMaternal mortality uses outdated baseline\nThe seed value of 264/100K live births reflects the 2019 WHO estimate. Current WHO data (2022) puts Uganda at 189/100K — a significant documented improvement the seed has not captured.\n✕\nEACOP completion is the critical error\nSeed shows 38% pipeline completion. EACOP Company confirmed 82% by April 2026. This 44-percentage-point gap would be immediately spotted by anyone from MEMD or UNOC. Priority fix.\n✕\nTax/GDP ratio and first oil timeline are off\nTax/GDP stated at 15.1% vs actual 13.4–14%. First oil target placed at \"late 2027\" vs the revised October 2026 commissioning date. Both are verifiable by MoFPED and MEMD stakeholders.\nAPEX NEXUS · Seed Data Integrity Audit · FY 2025/26\nSources: UCDA, UTB, UBOS, BoU, TI, EACOP Co., WHO, World Bank, TotalEnergies, Monitor, URA\nCLASSIFIED — FOR OFFICIAL USE ONLY",
+      "links": [
+        "/"
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "path": "/design",
+      "status": 200,
+      "title": "APEX NEXUS — Presidential Directive Intelligence",
+      "text": "Open access — Simulated operational data. Anyone can select a profile. No identity assurance. This is not an official government record.",
+      "links": [],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "path": "/backend/healthz",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8"
+    },
+    {
+      "path": "/backend/profiles",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8"
+    },
+    {
+      "path": "/backend/directives",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8"
+    },
+    {
+      "path": "/backend/context",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8"
+    },
+    {
+      "path": "/backend/reports",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8"
+    }
+  ]
+}
