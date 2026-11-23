@@ -13,7 +13,7 @@ class ProfileOut(BaseModel):
     role: Role
     institution_id: UUID
     institution_name: str
-    is_simulated: Literal[True] = True
+    is_sample: bool = False
 
 
 class ReportCreate(BaseModel):
@@ -21,6 +21,8 @@ class ReportCreate(BaseModel):
     title: str = Field(min_length=5, max_length=200)
     period: str = Field(pattern=r'^FY20\d{2}/\d{2} Q[1-4]$')
     narrative: str = Field(min_length=20, max_length=20000)
+    directive_id: UUID
+    district_id: UUID | None = None
 
 
 class ReportOut(ReportCreate):
@@ -30,7 +32,7 @@ class ReportOut(ReportCreate):
     actor_id: UUID
     state: Literal['DRAFT', 'SUBMITTED', 'AI_SUMMARISED', 'UNDER_REVIEW', 'RETURNED', 'ACCEPTED']
     version: int
-    is_simulated: bool
+    is_sample: bool
     review_comment: str
     created_at: datetime
     updated_at: datetime

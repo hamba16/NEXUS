@@ -8,12 +8,17 @@ from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 
 
 class Role(StrEnum):
-    CONVENER = 'CONVENER'
-    SECRETARIAT = 'SECRETARIAT'
-    MDA_OFFICER = 'MDA_OFFICER'
-    FIELD_MONITOR = 'FIELD_MONITOR'
-    ANCHOR_ENTITY = 'ANCHOR_ENTITY'
-    OVERSIGHT = 'OVERSIGHT'
+    PRESIDENCY_VIEWER = 'PRESIDENCY_VIEWER'
+    DSEMR_ANALYST = 'DSEMR_ANALYST'
+    MIU_ANALYST = 'MIU_ANALYST'
+    CABINET_SECRETARIAT = 'CABINET_SECRETARIAT'
+    APEX_SECRETARIAT = 'APEX_SECRETARIAT'
+    MINISTRY_FOCAL = 'MINISTRY_FOCAL'
+    ACCOUNTING_OFFICER = 'ACCOUNTING_OFFICER'
+    FIELD_VERIFIER = 'FIELD_VERIFIER'
+    OVERSIGHT_LIAISON = 'OVERSIGHT_LIAISON'
+    DATA_PROTECTION_OFFICER = 'DATA_PROTECTION_OFFICER'
+    SYSTEM_ADMINISTRATOR = 'SYSTEM_ADMINISTRATOR'
 
 
 class Base(DeclarativeBase):
@@ -57,7 +62,7 @@ class Profile(Base):
     name: Mapped[str] = mapped_column(String(100))
     role: Mapped[str] = mapped_column(String(24))
     institution_id: Mapped[UUID] = mapped_column(ForeignKey('institution.id'), index=True)
-    is_simulated: Mapped[bool] = mapped_column(Boolean, default=True)
+    is_sample: Mapped[bool] = mapped_column(Boolean, default=False)
     active: Mapped[bool] = mapped_column(Boolean, default=True)
 
 
@@ -85,7 +90,6 @@ class MDAReport(Base):
     __table_args__ = (
         CheckConstraint("state IN ('DRAFT','SUBMITTED','AI_SUMMARISED','UNDER_REVIEW','RETURNED','ACCEPTED')", name='report_state'),
         CheckConstraint('version > 0', name='report_version'),
-        CheckConstraint('is_simulated = true', name='open_report_simulated'),
     )
     id: Mapped[UUID] = mapped_column(primary_key=True, default=uuid4)
     institution_id: Mapped[UUID] = mapped_column(ForeignKey('institution.id'), index=True)
@@ -96,6 +100,8 @@ class MDAReport(Base):
     review_comment: Mapped[str] = mapped_column(Text, default='')
     state: Mapped[str] = mapped_column(String(20), default='DRAFT', index=True)
     version: Mapped[int] = mapped_column(Integer, default=1)
-    is_simulated: Mapped[bool] = mapped_column(Boolean, default=True)
+    is_sample: Mapped[bool] = mapped_column(Boolean, default=False)
+    directive_id: Mapped[UUID | None] = mapped_column(ForeignKey('directive.id'), nullable=True, index=True)
+    district_id: Mapped[UUID | None] = mapped_column(nullable=True, index=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())

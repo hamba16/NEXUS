@@ -17,15 +17,17 @@ def attainment(actual: Decimal, target: Decimal, *, lower_is_better: bool = Fals
 
 
 def transition(state: str, action: str, role: str) -> str:
+    reviewers = {'DSEMR_ANALYST','MIU_ANALYST','CABINET_SECRETARIAT','APEX_SECRETARIAT','ACCOUNTING_OFFICER'}
+    effective_role = 'REVIEWER' if role in reviewers else role
     transitions = {
-        ('DRAFT', 'submit', 'MDA_OFFICER'): 'SUBMITTED',
-        ('RETURNED', 'submit', 'MDA_OFFICER'): 'SUBMITTED',
-        ('SUBMITTED', 'review', 'SECRETARIAT'): 'UNDER_REVIEW',
-        ('AI_SUMMARISED', 'review', 'SECRETARIAT'): 'UNDER_REVIEW',
-        ('UNDER_REVIEW', 'accept', 'SECRETARIAT'): 'ACCEPTED',
-        ('UNDER_REVIEW', 'return', 'SECRETARIAT'): 'RETURNED',
+        ('DRAFT', 'submit', 'MINISTRY_FOCAL'): 'SUBMITTED',
+        ('RETURNED', 'submit', 'MINISTRY_FOCAL'): 'SUBMITTED',
+        ('SUBMITTED', 'review', 'REVIEWER'): 'UNDER_REVIEW',
+        ('AI_SUMMARISED', 'review', 'REVIEWER'): 'UNDER_REVIEW',
+        ('UNDER_REVIEW', 'accept', 'REVIEWER'): 'ACCEPTED',
+        ('UNDER_REVIEW', 'return', 'REVIEWER'): 'RETURNED',
     }
     try:
-        return transitions[(state, action, role)]
+        return transitions[(state, action, effective_role)]
     except KeyError as exc:
         raise ValueError('Transition is not permitted from this state for this role') from exc
