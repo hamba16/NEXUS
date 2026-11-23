@@ -20,6 +20,29 @@ class Base(DeclarativeBase):
     pass
 
 
+class PublicContextPack(Base):
+    __tablename__ = 'public_context_pack'
+    id: Mapped[UUID] = mapped_column(primary_key=True, default=uuid4)
+    name: Mapped[str] = mapped_column(String(200))
+    version: Mapped[str] = mapped_column(String(40))
+    as_of: Mapped[str] = mapped_column(String(20))
+    meta: Mapped[dict] = mapped_column(JSONB, default=dict)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+
+
+class PublicContextRecord(Base):
+    __tablename__ = 'public_context_record'
+    id: Mapped[UUID] = mapped_column(primary_key=True, default=uuid4)
+    pack_id: Mapped[UUID] = mapped_column(ForeignKey('public_context_pack.id', ondelete='CASCADE'), index=True)
+    section: Mapped[str] = mapped_column(String(80), index=True)
+    slug: Mapped[str] = mapped_column(String(200))
+    payload: Mapped[dict] = mapped_column(JSONB)
+    provenance: Mapped[str] = mapped_column(String(20))
+    source_ids: Mapped[list] = mapped_column(JSONB, default=list)
+    as_of: Mapped[str | None] = mapped_column(String(20), nullable=True)
+    reverify: Mapped[bool] = mapped_column(Boolean, default=False)
+
+
 class Institution(Base):
     __tablename__ = 'institution'
     id: Mapped[UUID] = mapped_column(primary_key=True, default=uuid4)

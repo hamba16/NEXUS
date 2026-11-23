@@ -13,6 +13,8 @@ seed:
 	$(COMPOSE) run --rm seed
 verify-seed:
 	$(PYTHON) seed/verify_directives.py
+import-context:
+	$(PYTHON) -c "import os,sys; sys.path.insert(0,'.'); from seed.import_context_pack import import_pack; print(import_pack(__import__('pathlib').Path(os.environ.get('PACK','seed/data/uganda-context-pack.json'))))"
 test:
 	$(PYTHON) -m pytest services/api/tests
 e2e:

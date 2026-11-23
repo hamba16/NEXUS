@@ -21,3 +21,4 @@ tmp/
 .hypothesis/
 output/
 *.bak_*
+.neon

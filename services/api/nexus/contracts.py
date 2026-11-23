@@ -40,6 +40,27 @@ class ReportEdit(ReportCreate):
     version: int = Field(ge=1)
 
 
+class PublicContextPackOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    id: UUID
+    name: str
+    version: str
+    as_of: str
+    meta: dict
+
+
+class PublicContextRecordOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    id: UUID
+    section: str
+    slug: str
+    payload: dict
+    provenance: str
+    source_ids: list[str]
+    as_of: str | None = None
+    reverify: bool
+
+
 class DirectiveOut(BaseModel):
     model_config = ConfigDict(from_attributes=True)
     id: UUID

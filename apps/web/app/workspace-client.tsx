@@ -115,7 +115,7 @@ export default function Workspace() {
     <a className="workspace-skip" href="#workspace-main">Skip to workspace</a>
     <header className="workspace-header">
       <a href="/" className="workspace-brand"><img src="/apex-nexus-logo.png" width={40} height={40} alt="" /><span>APEX NEXUS<small>Executive Oversight Intelligence</small></span></a>
-      <a href="/showcase">Exhibition reference</a>
+      <nav aria-label="Workspace tools" className="flex flex-wrap gap-4"><a href="/context">Uganda context register</a><a href="/showcase">Exhibition reference</a></nav>
     </header>
     <main id="workspace-main">
       <div className="workspace-intro"><p className="workspace-eyebrow">Office of the President · Product development workspace</p><h1>Accountability begins with a clear record.</h1><p>Choose a synthetic profile to exercise persisted reporting and review. Published directive research and the remaining production modules are still in progress.</p></div>

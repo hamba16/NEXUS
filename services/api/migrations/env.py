@@ -4,9 +4,16 @@ from alembic import context
 from nexus.models import Base
 from sqlalchemy import create_engine, pool
 
-url = os.environ.get('MIGRATION_DATABASE_URL')
+url = os.environ.get('MIGRATION_DATABASE_URL') or os.environ.get('DATABASE_URL_UNPOOLED') or os.environ.get('DATABASE_URL')
 if not url:
-    raise RuntimeError('MIGRATION_DATABASE_URL is required; never run migrations as the API role')
+    raise RuntimeError('MIGRATION_DATABASE_URL, DATABASE_URL_UNPOOLED, or DATABASE_URL is required')
+url = url.strip().strip('"\'')
+if url.startswith('postgres://'):
+    url = 'postgresql+psycopg://' + url[len('postgres://'):]
+elif url.startswith('postgresql://'):
+    url = 'postgresql+psycopg://' + url[len('postgresql://'):]
+if not url.startswith('postgresql+psycopg://'):
+    raise RuntimeError('Migration DATABASE_URL must use a PostgreSQL URL')
 
 if context.is_offline_mode():
     context.configure(url=url, target_metadata=Base.metadata, literal_binds=True)

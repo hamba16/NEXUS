@@ -1,3 +1,4 @@
+import asyncio
 import json
 import logging
 import time
@@ -13,10 +14,12 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from .auth import Actor, actor_session, require_role, resolve_actor
 from .config import get_settings
-from .contracts import DirectiveOut, ProfileOut, ReportCreate, ReportEdit, ReportOut, Transition
+from .contracts import DirectiveOut, ProfileOut, PublicContextPackOut, PublicContextRecordOut, ReportCreate, ReportEdit, ReportOut, Transition
 from .db import check_database_role, engine, public_session
 from .domain import transition
-from .models import Directive, Institution, MDAReport, Profile, Role
+from .models import Directive, Institution, MDAReport, Profile, PublicContextPack, PublicContextRecord, Role
+from .neon_services import ai_gateway_status, function_status, object_storage_status, postgres_status, realtime_status
+from seed.import_context_pack import import_payload
 
 settings = get_settings()
 logger = logging.getLogger('nexus')
@@ -73,9 +76,55 @@ async def readyz() -> dict:
     return {'status': 'ready', 'database': 'ok', 'scope': 'API database foundation; blob/worker readiness not implemented yet'}
 
 
+@app.get('/neon/status')
+async def neon_status(session: Annotated[AsyncSession, Depends(public_session)]):
+    return {
+        'postgres': await postgres_status(session),
+        'functions': await function_status(),
+        'object_storage': await object_storage_status(),
+        'ai_gateway': await ai_gateway_status(),
+        'realtime': await realtime_status(),
+    }
+
+
 @app.get('/metrics', response_class=Response)
 async def metrics() -> Response:
     return Response(f'# TYPE nexus_http_requests_total counter\nnexus_http_requests_total {request_count}\n', media_type='text/plain; version=0.0.4')
+
+
+@app.post('/context/import')
+async def context_import(payload: dict, actor: Annotated[Actor, Depends(resolve_actor)]):
+    require_role(actor, Role.SECRETARIAT)
+    if not isinstance(payload.get('meta'), dict) or not payload['meta'].get('name'):
+        raise HTTPException(422, 'Context JSON must include meta.name')
+    try:
+        result = await asyncio.to_thread(import_payload, payload)
+    except Exception as exc:
+        raise HTTPException(422, f'Context import failed: {exc}') from exc
+    return result
+
+
+@app.get('/context/packs', response_model=list[PublicContextPackOut])
+async def context_packs(session: Annotated[AsyncSession, Depends(public_session)]):
+    rows = await session.scalars(select(PublicContextPack).order_by(PublicContextPack.created_at.desc()))
+    return list(rows)
+
+
+@app.get('/context/{section}', response_model=list[PublicContextRecordOut])
+async def context_records(section: str, session: Annotated[AsyncSession, Depends(public_session)], limit: int = Query(500, ge=1, le=1000)):
+    rows = await session.scalars(select(PublicContextRecord).where(PublicContextRecord.section == section).order_by(PublicContextRecord.slug).limit(limit))
+    return list(rows)
+
+
+@app.get('/context', response_model=dict)
+async def context_summary(session: Annotated[AsyncSession, Depends(public_session)]):
+    pack = await session.scalar(select(PublicContextPack).order_by(PublicContextPack.created_at.desc()).limit(1))
+    if pack is None:
+        return {'loaded': False, 'meta': {'as_of': None}, 'counts': {}, 'sources': []}
+    counts = dict((await session.execute(text("SELECT section, count(*) FROM public_context_record WHERE pack_id=:pack_id GROUP BY section"), {'pack_id': pack.id})).all())
+    meta = pack.meta or {}
+    sources = [record.payload for record in await session.scalars(select(PublicContextRecord).where(PublicContextRecord.pack_id == pack.id, PublicContextRecord.section == 'sources'))]
+    return {'loaded': True, 'meta': meta, 'counts': counts, 'sources': sources}
 
 
 @app.get('/directives', response_model=list[DirectiveOut])

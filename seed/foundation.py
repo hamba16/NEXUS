@@ -10,7 +10,10 @@ def stable_id(name: str) -> str:
 
 
 def seed() -> dict:
-    engine = create_engine(os.environ['MIGRATION_DATABASE_URL'])
+    migration_url = os.environ.get('MIGRATION_DATABASE_URL') or os.environ.get('DATABASE_URL_UNPOOLED') or os.environ.get('DATABASE_URL')
+    if not migration_url:
+        raise RuntimeError('MIGRATION_DATABASE_URL, DATABASE_URL_UNPOOLED, or DATABASE_URL is required')
+    engine = create_engine(migration_url)
     roles = [('CONVENER', 1), ('SECRETARIAT', 5), ('MDA_OFFICER', 22), ('FIELD_MONITOR', 6), ('ANCHOR_ENTITY', 3), ('OVERSIGHT', 3)]
     first_names = ['Amina', 'Moses', 'Esther', 'Daniel', 'Lydia', 'Peter', 'Grace', 'Robert', 'Sarah', 'Isaac']
     surnames = ['Namuli', 'Ocen', 'Kato', 'Auma', 'Waiswa', 'Nabirye', 'Okello', 'Atim', 'Kakande', 'Ssenyonga']
